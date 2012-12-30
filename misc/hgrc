@@ -1,0 +1,35 @@
+[extensions]
+#hgext.mercurial_keyring = /usr/lib/tuenti_tools/mercurial/extensions/keyring.py
+graphlog =
+color =
+purge =
+mq =
+transplant =
+rebase =
+record = 
+bookmarks = 
+fetch = 
+pager=
+progress=
+
+[pager]
+pager = LESS='FSRX' less
+ignore = version, update, server, record
+
+[ui]
+username = Galo Navarro <email@email.com>
+ssh = ssh -C -c arcfour
+editor = vi
+merge = internal:merge
+
+[defaults]
+glog = -l 5
+
+[diff]
+git=1
+
+[merge-patterns]
+**.jpg = internal:fail
+**.exe = internal:fail
+**.png = internal:fail
+**.swf = internal:fail

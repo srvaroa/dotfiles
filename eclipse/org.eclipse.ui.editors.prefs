@@ -1,0 +1,15 @@
+AbstractTextEditor.Color.Background=26,26,26
+AbstractTextEditor.Color.Background.SystemDefault=false
+AbstractTextEditor.Color.Foreground=238,238,238
+AbstractTextEditor.Color.Foreground.SystemDefault=false
+AbstractTextEditor.Color.SelectionBackground=77,77,77
+AbstractTextEditor.Color.SelectionBackground.SystemDefault=false
+AbstractTextEditor.Color.SelectionForeground=191,191,191
+AbstractTextEditor.Color.SelectionForeground.SystemDefault=false
+currentLineColor=77,77,77
+eclipse.preferences.version=1
+lineNumberRuler=true
+overviewRuler_migration=migrated_3.1
+printMargin=true
+printMarginColor=77,77,77
+showWhitespaceCharacters=true

@@ -1,0 +1,164 @@
+" vim: ff=unix ts=3 ss=2 tw=72 fdm=marker foldmarker=[[[,]]]
+" using [[[ ]]] as marker here because the vmap for adding
+" markers fucks everything up otherwise
+colorscheme varoa
+" ------------------------------
+" [[[ ASSORTED CONFS
+set backspace=start,indent,eol " let backspace past start of edit, autoindenting and start of line
+" set colorcolumn=85 " red line on col. 85
+" set cursorline " highlight cursor line
+set diffopt=vertical,filler,iwhite " options for diff mode
+set encoding=utf-8
+set errorformat=%m\ in\ %f\ on\ line\ %l
+set formatoptions=t
+set hlsearch " highlight all search matches
+set ignorecase
+set incsearch " find while searching
+set laststatus=2 
+set linebreak
+" set list listchars=tab:>-
+set makeprg=php\ -l\ % " check syntax on file & jump to error
+set modelines=1
+set mouse=a
+set nocompatible
+set number
+" so that ^wf finds the class file under cursor
+set path=**
+set ruler
+set scrolloff=3
+set shiftwidth=4
+set showcmd
+set showmatch
+set showmode
+set smartcase
+set smartindent
+set sw=4
+set tabstop=4
+set tags=$PWD/tags;/.  " set tags if generated 
+set textwidth=72
+set ttyfast " improve scrolling
+set ttymouse=xterm2 " so that the mouse works inside tmux
+set viminfo='20,<50,s10,h,% " remember some stuff after quiting vim:
+set wrapscan " make search go back to start of file
+" au FocusLost * :wa " auto save on focus lost
+" au WinEnter * setlocal cursorline
+" au WinLeave * setlocal nocursorline
+" filetype 
+filetype plugin indent on " filetype and php autocomplete. The indent is for vundle
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+syntax on
+" ]]]
+" [[[ MAPPINGS
+" change personal modifier key to , instead of \.
+let mapleader = ","
+" Get rid of ex mode by accident
+nnoremap Q <nop>
+" disable arrow keys (or make them useful)
+map <up> <nop>
+map <down> <ESC><C-W>w
+map <left> <ESC>:tabp<CR>
+map <right> <ESC>:tabn<CR>
+inoremap <up> <nop>
+inoremap <down> <ESC><C-W>w
+inoremap <left> <ESC>:tabp<CR>
+inoremap <right> <ESC>:tabn<CR>
+" make - support /, one of those benefits of english keyboards
+nnoremap - /
+" edit and source .vimrc
+nnoremap <leader>ev :vs $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>[ viw<esc>a]<esc>hbi[<esc>lel
+" <leader>fold to create a fold wrapping selection
+vmap <leader>fold mz:<Esc>'<O{{{<Esc>'>o}}}<Esc>`z?{{{<CR>A<Space>
+" <leader>" to wrap inner word in quotes
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
+" operator pending, inner prev/next brackets
+onoremap ip( :<c-u>normal! F)vi(<cr>
+onoremap in( :<c-u>normal! f(vi(<cr>
+" operator pending, inner prev/next sgl quotes
+onoremap ip' :<c-u>normal! F'vi'<cr>
+onoremap in' :<c-u>normal! f'vi'<cr>
+" operator pending, inner prev/next dbl quotes
+onoremap ip" :<c-u>normal! F"vi"<cr>
+onoremap in" :<c-u>normal! f"vi"<cr>
+" comment line
+nnoremap <leader>7 0i//<esc>
+" comment visual area
+vnoremap <leader>7 :s/^/\/\//g<cr>
+" quick vertical, horizontal splits
+nnoremap <leader>! :vs<cr><C-w>w
+nnoremap <leader>_ :sp<cr><C-w>w
+" remap control-space to autocompletion
+" see http://robots.thoughtbot.com/post/27041742805/vim-you-complete-me
+inoremap <Nul> <C-N>
+" php documentor
+inoremap <C-P><ESC>:call PhpDocSingle()<CR>i
+nnoremap <C-P> :call PhpDocSingle()<CR>
+vnoremap <C-P> :call PhpDocRange()<CR>
+" ]]]
+" [[[ VUNDLE SETUP (github.com/gmarik/vundle)
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" let Vundle manage Vundle, required
+Bundle 'gmarik/vundle'
+" add your bundles here
+" original repos on github
+Bundle 'kien/ctrlp.vim'
+" non-github repos
+" Bundle 'git://git.wincent.com/command-t.git'
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of
+"     unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
+" ]]]
+" [[[ REPLACEMENTS
+iab tau @author Galo Navarro <anglorvaroa@gmail.com>
+iab tnow Galo - <ESC>:r !date<CR>kJA
+" ]]]
+" [[[ WILDMENU
+" make file/command completion have results count. allow tabbing along the
+" results
+set wildmenu
+set wildmode=longest,full
+set wildignore+=build/**,client_apps/**,language/**,main/language/**,lib/tuenti-build/**,static/control/**,configuration/environments/**,tests/phpunit-xml-configurations/**,test/lib/**,*.class
+" It shows a menu and, if available, any additional tips such as the
+" method signature or defining file
+set completeopt=menu,preview
+" ]]]
+" [[[ CTRL-P
+" see https://github.com/kien/ctrlp.vim
+nnoremap ,f :CtrlP<CR>
+" let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|\.mo$\|\.po$\|\pot$\|\.json$'
+let g:ctrlp_custom_ignore = '\.\(git\|hg\|svn\|mo\|po\|pot\|json\|jar\|class\|gif\|jpg\|jpeg\|png\|bin\|css\)$'
+let g:ctrlp_working_path_mode = 'r'
+" ]]] 
+" [[[ SYNTAX ENFORCEMENT
+au BufNewFile,BufRead *.phtml set filetype=php
+au BufRead,BufNewFile *.scala set filetype=scala
+" ]]]
+"
+" [[[ UNUSED 
+"
+" [[[ PHP DOCUMENTOR
+" inoremap <C-D> <ESC>:call PhpDocSingle()<CR>i
+" nnoremap <C-D> :call PhpDocSingle()<CR>
+" vnoremap <C-D> :call PhpDocRange()<CR> 
+" ]]]
+" [[[ XDEBUG
+" ---- XDEBUG
+" Port that the proxy use to connect back to you. anything, as long as not taken by someone else!
+" let g:debuggerPort = 9007 
+" yr. hostname, necessary since the proxy are run and hardwired to listen to a certain host.
+" let g:debuggerProxyHost = 'azeroth.tuenti.local'
+" your idekey to use.
+" let g:debuggerProxyIdeKey = 'gnavarro'
+" ]]]
+"
+" ]]]
+"

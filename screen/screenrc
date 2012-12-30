@@ -1,0 +1,8 @@
+shell -${SHELL}
+startup_message off
+autodetach on
+defutf8 on
+caption always "%{= kw}%?%-Lw%?%{+b kw}%n*%t%f %?(%u)%?%{= kw}%?%+Lw%?"
+# Set left and right meta key mods ALT-,. 
+bindkey "^[," prev
+bindkey "^[." next
