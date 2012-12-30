@@ -1,5 +1,4 @@
 [extensions]
-#hgext.mercurial_keyring = /usr/lib/tuenti_tools/mercurial/extensions/keyring.py
 graphlog =
 color =
 purge =
@@ -17,7 +16,7 @@ pager = LESS='FSRX' less
 ignore = version, update, server, record
 
 [ui]
-username = Galo Navarro <email@email.com>
+username = User <email>
 ssh = ssh -C -c arcfour
 editor = vi
 merge = internal:merge
