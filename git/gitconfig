@@ -1,0 +1,10 @@
+[user]
+	name = Galo Navarro
+	email = 
+[core]
+	editor = vim
+[color]
+	ui = true
+[diff]
+	tool = vimdiff
+
