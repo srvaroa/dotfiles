@@ -54,6 +54,13 @@ hi StatusLineNC cterm=NONE ctermbg=white ctermbg=8
 " Folds
 hi Folded ctermfg=245 ctermbg=235 cterm=NONE
 
+" diff
+55	  	
+hi DiffAdd cterm=none ctermfg=white ctermbg=28
+hi DiffChange cterm=none ctermfg=white ctermbg=4
+hi DiffDelete cterm=none ctermfg=white ctermbg=160
+hi DiffText cterm=none ctermfg=none ctermbg=none
+
 " some for markdown
 " hi markdownHeadingRule cterm=none	ctermbg=black ctermfg=darkBlue guibg=black guifg=darkblue
 " hi markdownUrl cterm=bold	ctermbg=black ctermfg=magenta guibg=black guifg=magenta
