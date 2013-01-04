@@ -37,7 +37,7 @@ set tabstop=4
 set tags=$PWD/tags;/.  " set tags if generated 
 set textwidth=72
 set ttyfast " improve scrolling
-set ttymouse=xterm2 " so that the mouse works inside tmux
+" set ttymouse=xterm2 " so that the mouse works inside tmux
 set viminfo='20,<50,s10,h,% " remember some stuff after quiting vim:
 set wrapscan " make search go back to start of file
 " au FocusLost * :wa " auto save on focus lost
