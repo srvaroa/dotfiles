@@ -119,7 +119,9 @@ Bundle 'kien/ctrlp.vim'
 " ]]]
 " [[[ REPLACEMENTS
 iab tau @author Galo Navarro <anglorvaroa@gmail.com>
-iab tnow Galo - <ESC>:r !date<CR>kJA
+" iab tnow <ESC>:r !date +%Y%m%d<CR>kJA
+iab <expr> tnow strftime("%Y%m%d %H:%M:%S")
+iab <expr> tdat strftime("%Y%m%d")
 " ]]]
 " [[[ WILDMENU
 " make file/command completion have results count. allow tabbing along the
