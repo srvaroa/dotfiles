@@ -2,14 +2,18 @@
 " using [[[ ]]] as marker here because the vmap for adding
 " markers fucks everything up otherwise
 colorscheme varoa
-" ------------------------------
+syntax on
 " [[[ ASSORTED CONFS
-set backspace=start,indent,eol " let backspace past start of edit, autoindenting and start of line
-" set colorcolumn=85 " red line on col. 85
-" set cursorline " highlight cursor line
+" let backspace past start of edit
+"     autoindenting and start of line
+set backspace=start,indent,eol 
+" line on col. textwitdh+1
+" set colorcolumn=+1
+set cursorline " highlight cursor line
 set diffopt=vertical,filler,iwhite " options for diff mode
 set encoding=utf-8
 set errorformat=%m\ in\ %f\ on\ line\ %l
+set expandtab
 set formatoptions=t
 set hlsearch " highlight all search matches
 set ignorecase
@@ -25,6 +29,9 @@ set number
 " so that ^wf finds the class file under cursor
 set path=**
 set ruler
+" folding
+set fdm=marker
+set ff=unix
 set scrolloff=3
 set shiftwidth=4
 set showcmd
@@ -40,13 +47,17 @@ set ttyfast " improve scrolling
 " set ttymouse=xterm2 " so that the mouse works inside tmux
 set viminfo='20,<50,s10,h,% " remember some stuff after quiting vim:
 set wrapscan " make search go back to start of file
-" au FocusLost * :wa " auto save on focus lost
-" au WinEnter * setlocal cursorline
-" au WinLeave * setlocal nocursorline
+" [[[ SYNTAX ENFORCEMENT
+au BufNewFile,BufRead *.phtml set filetype=php
+au BufRead,BufNewFile *.scala set filetype=scala
+au BufRead,BufNewFile *.md set filetype=markdown
+" ]]]
 " filetype 
 filetype plugin indent on " filetype and php autocomplete. The indent is for vundle
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-syntax on
+autocmd FileType markdown set tw=72
+autocmd FileType text set tw=72
+autocmd FileType php set tw=72
 " ]]]
 " [[[ MAPPINGS
 " change personal modifier key to , instead of \.
@@ -97,26 +108,6 @@ inoremap <C-P><ESC>:call PhpDocSingle()<CR>i
 nnoremap <C-P> :call PhpDocSingle()<CR>
 vnoremap <C-P> :call PhpDocRange()<CR>
 " ]]]
-" [[[ VUNDLE SETUP (github.com/gmarik/vundle)
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-" let Vundle manage Vundle, required
-Bundle 'gmarik/vundle'
-" add your bundles here
-" original repos on github
-Bundle 'kien/ctrlp.vim'
-" non-github repos
-" Bundle 'git://git.wincent.com/command-t.git'
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of
-"     unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
-" ]]]
 " [[[ REPLACEMENTS
 iab tau @author Galo Navarro <anglorvaroa@gmail.com>
 " iab tnow <ESC>:r !date +%Y%m%d<CR>kJA
@@ -133,6 +124,27 @@ set wildignore+=build/**,client_apps/**,language/**,main/language/**,lib/tuenti-
 " method signature or defining file
 set completeopt=menu,preview
 " ]]]
+" [[[ VUNDLE SETUP (github.com/gmarik/vundle)
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" let Vundle manage Vundle, required
+Bundle 'gmarik/vundle'
+" add your bundles here
+" original repos on github
+Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-fugitive'
+" non-github repos
+" Bundle 'git://git.wincent.com/command-t.git'
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of
+"     unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
+" ]]]
 " [[[ CTRL-P
 " see https://github.com/kien/ctrlp.vim
 nnoremap ,f :CtrlP<CR>
@@ -140,13 +152,11 @@ nnoremap ,f :CtrlP<CR>
 let g:ctrlp_custom_ignore = '\.\(git\|hg\|svn\|mo\|po\|pot\|json\|jar\|class\|gif\|jpg\|jpeg\|png\|bin\|css\)$'
 let g:ctrlp_working_path_mode = 'r'
 " ]]] 
-" [[[ SYNTAX ENFORCEMENT
-au BufNewFile,BufRead *.phtml set filetype=php
-au BufRead,BufNewFile *.scala set filetype=scala
-" ]]]
-"
 " [[[ UNUSED 
 "
+" au FocusLost * :wa " auto save on focus lost
+" au WinEnter * setlocal cursorline
+" au WinLeave * setlocal nocursorline
 " [[[ PHP DOCUMENTOR
 " inoremap <C-D> <ESC>:call PhpDocSingle()<CR>i
 " nnoremap <C-D> :call PhpDocSingle()<CR>
@@ -163,4 +173,3 @@ au BufRead,BufNewFile *.scala set filetype=scala
 " ]]]
 "
 " ]]]
-"

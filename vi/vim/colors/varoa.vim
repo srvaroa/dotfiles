@@ -18,6 +18,8 @@ hi Boolean cterm=NONE ctermfg=28 ctermbg=none
 hi Character cterm=NONE ctermfg=28 ctermbg=none
 hi Comment cterm=NONE ctermfg=240 ctermbg=none
 hi Constant cterm=NONE ctermfg=white ctermbg=none
+hi CursorLine   NONE ctermbg=233
+hi ColorColumn   NONE ctermbg=235
 hi Directory cterm=NONE ctermfg=white ctermbg=NONE
 hi File cterm=NONE ctermfg=white ctermbg=NONE
 hi Function cterm=NONE ctermfg=white ctermbg=none
@@ -36,6 +38,7 @@ hi String cterm=NONE ctermfg=28 ctermbg=none
 hi Type cterm=NONE ctermfg=white ctermbg=NONE
 hi VertSplit cterm=NONE ctermfg=238 ctermbg=233
 hi Visual cterm=NONE ctermfg=yellow ctermbg=19
+hi Todo cterm=none ctermfg=yellow ctermbg=none
 
 " search
 hi IncSearch cterm=NONE ctermfg=17 ctermbg=166

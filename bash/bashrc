@@ -115,3 +115,6 @@ else
 	export PATH="~/local/scala/bin:$PATH"
 	export SCALA_HOME="~/local/scala"
 fi
+
+# vi mode
+set -o vi
