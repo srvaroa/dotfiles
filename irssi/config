@@ -182,8 +182,9 @@ settings = {
   "perl/core/scripts" = {
     notifier_on_regex = "galo";
     notifier_on_regex = "coffee";
+    notifier_on_regex = "cafe";
     notifier_on_regex = "food";
-    notifier_channel_regex = "galo";
+    notifier_channel_regex = ".*";
     notifier_on_privmsg = "1";
     notifier_on_nick = "1";
   };

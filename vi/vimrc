@@ -1,6 +1,6 @@
 " vim: ff=unix ts=3 ss=2 tw=72 fdm=marker foldmarker=[[[,]]]
-" using [[[ ]]] as marker here because the vmap for adding
-" markers fucks everything up otherwise
+" using different marker here because the vmap for adding markers fucks
+" everything up otherwise
 colorscheme varoa
 syntax on
 " [[[ ASSORTED CONFS
@@ -133,6 +133,8 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'kana/vim-fakeclip'
+Bundle 'airblade/vim-gitgutter.git'
 " non-github repos
 " Bundle 'git://git.wincent.com/command-t.git'
 " Brief help
@@ -150,6 +152,7 @@ Bundle 'tpope/vim-fugitive'
 nnoremap ,f :CtrlP<CR>
 " let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|\.mo$\|\.po$\|\pot$\|\.json$'
 let g:ctrlp_custom_ignore = '\.\(git\|hg\|svn\|mo\|po\|pot\|json\|jar\|class\|gif\|jpg\|jpeg\|png\|bin\|css\)$'
+let g:ctrlp_custom_ignore = '\.\(git\|hg\|svn\|jar\|class\|gif\|jpg\|jpeg\|png\|bin\)$'
 let g:ctrlp_working_path_mode = 'r'
 " ]]] 
 " [[[ UNUSED 

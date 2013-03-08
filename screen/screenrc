@@ -10,5 +10,7 @@ bindkey "^[." next
 # terminfo and termcap for nice 256 colour terminal
 # allow bold colors
 attrcolor b ".I"
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 # erase background with current bg colour
 defbce "on"
+

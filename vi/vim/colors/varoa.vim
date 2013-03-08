@@ -66,11 +66,17 @@ hi DiffText cterm=none ctermfg=none ctermbg=none
 " MARKDOWN
 " ========
 hi markdownHeadingRule cterm=none ctermbg=black ctermfg=28
-" hi markdownUrl cterm=bold	ctermbg=black ctermfg=magenta guibg=black guifg=magenta
-" hi markdownItalic cterm=bold	ctermbg=black ctermfg=yellow guibg=black guifg=yellow
+hi markdownBold cterm=bold ctermbg=black ctermfg=white
+hi markdownItalic cterm=bold ctermbg=black ctermfg=white
+hi markdownCodeBlock cterm=bold	ctermbg=black ctermfg=240
+hi markdownUrl cterm=none	ctermbg=black ctermfg=darkblue
+hi markdownUrlDelimiter cterm=none ctermbg=black ctermfg=white
+hi markdownUrlTitle cterm=none ctermbg=black ctermfg=none
+hi markdownUrlTitleDelimiter cterm=none ctermbg=black ctermfg=white
+hi markdownLinkText cterm=none ctermbg=black ctermfg=yellow
+hi markdownLinkDelimiter cterm=none ctermbg=black ctermfg=white
 " hi markdownListMarker cterm=bold	ctermbg=black ctermfg=yellow guibg=black guifg=yellow
 " hi markdownOrderedListMarker cterm=bold	ctermbg=black ctermfg=brown guibg=black guifg=brown
-hi markdownCodeBlock cterm=bold	ctermbg=black ctermfg=240
 
 " GIT COMMIT
 " ==========
