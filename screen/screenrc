@@ -14,3 +14,7 @@ termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 # erase background with current bg colour
 defbce "on"
 
+# If this doesn't work for you, your version of screen probably wasn't
+# compiled with ./configure --enable-colors256. Personally, I have ~/bin
+# in my $PATH where the custom xterm/screen reside. From now on, vim
+# should look exactly the same in screen than in the plain xterm. 

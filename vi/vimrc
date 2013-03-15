@@ -64,6 +64,8 @@ autocmd FileType php set tw=72
 let mapleader = ","
 " Get rid of ex mode by accident
 nnoremap Q <nop>
+" Clear highlight
+nnoremap <C-h> :noh<CR>
 " disable arrow keys (or make them useful)
 map <up> <nop>
 map <down> <ESC><C-W>w

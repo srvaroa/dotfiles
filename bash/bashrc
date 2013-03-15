@@ -110,11 +110,14 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -alF' # was -aCF
 alias irc='screen -s irssi irssi'
+alias notes='cd ~/Dropbox/notes && vi'
 
 if [ -d /Users/galo/local/ ]; then
 	# MAC
 	export PATH="/Users/galo/local/scala/bin:$PATH"
 	export SCALA_HOME="/users/galo/local/scala"
+    export LC_CTYPE=es_ES.UTF-8
+    export LC_ALL=es_ES.UTF-8
 else
 	export PATH="~/local/scala/bin:$PATH"
 	export SCALA_HOME="~/local/scala"
