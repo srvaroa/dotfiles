@@ -1,0 +1,38 @@
+# vim-like navigation
+bind-key j down
+bind-key k up
+bind-key h left
+bind-key l right 
+bind-key m toggle-show-read-feeds
+bind-key O open-in-browser-and-mark-read
+
+show-read-feeds no
+notify-xterm yes
+notify-screen yes
+auto-reload yes
+reload-time 30
+reload-only-visible-feeds yes
+suppress-first-reload yes
+
+refresh-on-startup no
+reload-only-visible-feeds yes
+confirm-exit yes
+goto-next-feed no
+max-items 500
+refresh-on-startup no
+show-read-feeds no
+show-read-articles no
+text-width 72
+prepopulate-query-feeds yes
+
+browser ~/.newsbeuter/browse.sh
+
+article-sort-order date-desc
+feedlist-format "%S%n %11u %t"
+articlelist-format "%D %f %?T?;%-17T; ?%t"
+datetime-format %y-%m-%d
+color background white black
+color listnormal white black
+color listfocus black white
+color info black white
+color article white black
