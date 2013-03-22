@@ -18,8 +18,8 @@ hi Boolean cterm=NONE ctermfg=28 ctermbg=none
 hi Character cterm=NONE ctermfg=28 ctermbg=none
 hi Comment cterm=NONE ctermfg=240 ctermbg=none
 hi Constant cterm=NONE ctermfg=white ctermbg=none
-hi CursorLine   NONE ctermbg=233
-hi ColorColumn   NONE ctermbg=235
+hi CursorLine cterm=NONE ctermbg=233
+hi ColorColumn cterm=NONE ctermbg=235
 hi Directory cterm=NONE ctermfg=white ctermbg=NONE
 hi File cterm=NONE ctermfg=white ctermbg=NONE
 hi Function cterm=NONE ctermfg=white ctermbg=none
@@ -51,8 +51,8 @@ hi PMenuSel cterm=NONE ctermfg=yellow ctermbg=19
 " hi PMenuThumb cterm=NONE ctermfg=yellow ctermbg=19
 
 " Status
-hi StatusLine cterm=NONE ctermfg=white ctermbg=4
-hi StatusLineNC cterm=NONE ctermbg=white ctermbg=8
+hi StatusLine cterm=NONE ctermfg=white ctermbg=24
+hi StatusLineNC cterm=NONE ctermbg=white ctermbg=235
 
 " Folds
 hi Folded ctermfg=245 ctermbg=235 cterm=NONE

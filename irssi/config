@@ -1,10 +1,27 @@
 servers = (
+  {
+    address = "";
+    chatnet = "";
+    port = "6667";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  },
 );
 
 chatnets = {
+  <NAME> = {
+    type = "IRC";
+    nick = "";
+    username = "";
+    realname = "";
+    autosendcmd = "/^msg NickServ identify <PASS>;wait 2000";
+  };
 };
 
 channels = (
+  { name = ""; chatnet = ""; autojoin = "yes"; },
+  { name = ""; chatnet = ""; autojoin = "yes"; password = ""; }
 );
 
 aliases = {
@@ -181,10 +198,9 @@ settings = {
   };
   "perl/core/scripts" = {
     notifier_on_regex = "galo";
+    notifier_on_regex = "galo_";
     notifier_on_regex = "coffee";
-    notifier_on_regex = "cafe";
     notifier_on_regex = "food";
-    notifier_channel_regex = ".*";
     notifier_on_privmsg = "1";
     notifier_on_nick = "1";
   };
