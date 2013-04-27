@@ -1,7 +1,7 @@
 #!/bin/bash
-ln -s bash/bashrc ~/.bashrc
-ln -s vi/vim ~/.vim
-ln -s vi/vimrc ~/.vimrc
-ln -s tmux/tmuxrc ~/.tmuxrc
-ln -s screen/screenrc ~/.screenrc
-ln -s git/gitconfig ~/.gitconfig
+ln -s "$PWD/bash/bashrc" ~/.bashrc
+ln -s "$PWD/vi/vim" ~/.vim
+ln -s "$PWD/vi/vimrc" ~/.vimrc
+ln -s "$PWD/tmux/tmuxrc" ~/.tmuxrc
+ln -s "$PWD/screen/screenrc" ~/.screenrc
+ln -s "$PWD/git/gitconfig" ~/.gitconfig

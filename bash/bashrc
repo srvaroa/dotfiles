@@ -109,10 +109,10 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -alF' # was -aCF
-alias irc='screen -s irssi irssi'
 alias notes='cd ~/Dropbox/notes && vi'
+alias mutt='cd && mutt'
 
-export PATH="$HOME/local/scala/bin:$PATH"
+export PATH="$HOME/local/scala/bin:/usr/local/sbin/:$PATH"
 export SCALA_HOME="$HOME/local/scala"
 export LC_CTYPE=es_ES.UTF-8
 export LC_ALL=es_ES.UTF-8

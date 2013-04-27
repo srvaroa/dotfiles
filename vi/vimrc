@@ -121,7 +121,7 @@ iab <expr> tdat strftime("%Y%m%d")
 " results
 set wildmenu
 set wildmode=longest,full
-set wildignore+=build/**,client_apps/**,language/**,main/language/**,lib/tuenti-build/**,static/control/**,configuration/environments/**,tests/phpunit-xml-configurations/**,test/lib/**,*.class
+set wildignore+=target/**,*.class
 " It shows a menu and, if available, any additional tips such as the
 " method signature or defining file
 set completeopt=menu,preview
@@ -157,24 +157,13 @@ let g:ctrlp_custom_ignore = '\.\(git\|hg\|svn\|mo\|po\|pot\|json\|jar\|class\|gi
 let g:ctrlp_custom_ignore = '\.\(git\|hg\|svn\|jar\|class\|gif\|jpg\|jpeg\|png\|bin\)$'
 let g:ctrlp_working_path_mode = 'r'
 " ]]] 
-" [[[ UNUSED 
 "
-" au FocusLost * :wa " auto save on focus lost
-" au WinEnter * setlocal cursorline
-" au WinLeave * setlocal nocursorline
-" [[[ PHP DOCUMENTOR
-" inoremap <C-D> <ESC>:call PhpDocSingle()<CR>i
-" nnoremap <C-D> :call PhpDocSingle()<CR>
-" vnoremap <C-D> :call PhpDocRange()<CR> 
-" ]]]
-" [[[ XDEBUG
-" ---- XDEBUG
-" Port that the proxy use to connect back to you. anything, as long as not taken by someone else!
-" let g:debuggerPort = 9007 
-" yr. hostname, necessary since the proxy are run and hardwired to listen to a certain host.
-" let g:debuggerProxyHost = 'azeroth.tuenti.local'
-" your idekey to use.
-" let g:debuggerProxyIdeKey = 'gnavarro'
-" ]]]
-"
+" For Java [[[
+" http://stackoverflow.com/questions/6411979/compiling-java-code-in-vim-more-efficiently/14727153#14727153 
+autocmd Filetype java set makeprg=javac\ %
+autocmd Filetype scala set makeprg=scalac\ %
+set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
+map <F2> :make<Return>:copen<Return>
+map <F3> :cprevious<Return>
+map <F4> :cnext<Return>
 " ]]]
