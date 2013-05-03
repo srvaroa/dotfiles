@@ -103,10 +103,11 @@ nnoremap <leader>_ :sp<cr><C-w>w
 " remap control-space to autocompletion
 " see http://robots.thoughtbot.com/post/27041742805/vim-you-complete-me
 inoremap <Nul> <C-N>
-" php documentor
-inoremap <C-P><ESC>:call PhpDocSingle()<CR>i
-nnoremap <C-P> :call PhpDocSingle()<CR>
-vnoremap <C-P> :call PhpDocRange()<CR>
+" a new log entry
+inoremap <c-l> <c-R>=LogEntry()<cr><esc>kkyypVr-o
+func! LogEntry ()
+    return strftime("%Y%m%d {{{\n}}}\n")
+endfunc
 " ]]]
 " [[[ REPLACEMENTS
 iab tau @author Galo Navarro <anglorvaroa@gmail.com>
