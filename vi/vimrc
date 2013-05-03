@@ -42,22 +42,20 @@ set smartindent
 set sw=4
 set tabstop=4
 set tags=$PWD/tags;/.  " set tags if generated 
-set textwidth=72
+set tw=72
 set ttyfast " improve scrolling
 " set ttymouse=xterm2 " so that the mouse works inside tmux
 set viminfo='20,<50,s10,h,% " remember some stuff after quiting vim:
 set wrapscan " make search go back to start of file
+" ]]]
 " [[[ SYNTAX ENFORCEMENT
 au BufNewFile,BufRead *.phtml set filetype=php
 au BufRead,BufNewFile *.scala set filetype=scala
 au BufRead,BufNewFile *.md set filetype=markdown
-" ]]]
-" filetype 
 filetype plugin indent on " filetype and php autocomplete. The indent is for vundle
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType markdown set tw=72
-autocmd FileType text set tw=72
-autocmd FileType php set tw=72
+autocmd Filetype java set makeprg=javac\ %
+autocmd Filetype scala set makeprg=scalac\ %
 " ]]]
 " [[[ MAPPINGS
 " change personal modifier key to , instead of \.
@@ -157,11 +155,8 @@ let g:ctrlp_custom_ignore = '\.\(git\|hg\|svn\|mo\|po\|pot\|json\|jar\|class\|gi
 let g:ctrlp_custom_ignore = '\.\(git\|hg\|svn\|jar\|class\|gif\|jpg\|jpeg\|png\|bin\)$'
 let g:ctrlp_working_path_mode = 'r'
 " ]]] 
-"
 " For Java [[[
 " http://stackoverflow.com/questions/6411979/compiling-java-code-in-vim-more-efficiently/14727153#14727153 
-autocmd Filetype java set makeprg=javac\ %
-autocmd Filetype scala set makeprg=scalac\ %
 set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
 map <F2> :make<Return>:copen<Return>
 map <F3> :cprevious<Return>
