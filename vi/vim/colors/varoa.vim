@@ -31,8 +31,9 @@ hi MatchParen cterm=NONE ctermfg=yellow ctermbg=19
 hi NonText cterm=NONE ctermfg=22 ctermbg=none
 hi Number cterm=NONE ctermfg=28 ctermbg=none
 hi PreProc cterm=NONE ctermfg=28 ctermbg=NONE
-hi SpecialComment cterm=NONE ctermfg=250 ctermbg=none
 hi Special cterm=NONE ctermfg=white ctermbg=none
+hi SpecialComment cterm=NONE ctermfg=250 ctermbg=none
+hi SpecialKey gui=None cterm=None ctermfg=243 guifg=#767676 ctermbg=None guibg=None
 hi Statement cterm=NONE ctermfg=white
 hi String cterm=NONE ctermfg=28 ctermbg=none
 hi Type cterm=NONE ctermfg=white ctermbg=NONE

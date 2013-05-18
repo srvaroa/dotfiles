@@ -1,9 +1,8 @@
-" vim: ff=unix ts=3 ss=2 tw=72 fdm=marker foldmarker=[[[,]]]
-" using different marker here because the vmap for adding markers fucks
-" everything up otherwise
+" vim: ff=unix ts=3 ss=2 tw=72 fdm=marker foldmarker={,}
 colorscheme varoa
 syntax on
-" [[[ ASSORTED CONFS
+
+" ASSORTED CONFS {
 " let backspace past start of edit
 "     autoindenting and start of line
 set backspace=start,indent,eol 
@@ -34,6 +33,7 @@ set fdm=marker
 set ff=unix
 set scrolloff=3
 set shiftwidth=4
+set listchars=tab:»\ ,trail:⬞,precedes:«,extends:»,nbsp:⬞
 set showcmd
 set showmatch
 set showmode
@@ -47,8 +47,9 @@ set ttyfast " improve scrolling
 " set ttymouse=xterm2 " so that the mouse works inside tmux
 set viminfo='20,<50,s10,h,% " remember some stuff after quiting vim:
 set wrapscan " make search go back to start of file
-" ]]]
-" [[[ SYNTAX ENFORCEMENT
+" }
+
+" SYNTAX ENFORCEMENT {
 au BufNewFile,BufRead *.phtml set filetype=php
 au BufRead,BufNewFile *.scala set filetype=scala
 au BufRead,BufNewFile *.md set filetype=markdown
@@ -56,10 +57,12 @@ filetype plugin indent on " filetype and php autocomplete. The indent is for vun
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd Filetype java set makeprg=javac\ %
 autocmd Filetype scala set makeprg=scalac\ %
-" ]]]
-" [[[ MAPPINGS
+" }
+
+" MAPPINGS {
 " change personal modifier key to , instead of \.
 let mapleader = ","
+nnoremap <silent> <F10> :noh<CR>
 " Get rid of ex mode by accident
 nnoremap Q <nop>
 " Clear highlight
@@ -78,10 +81,9 @@ nnoremap - /
 " edit and source .vimrc
 nnoremap <leader>ev :vs $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
+" wrap words in things, there must be a more elegant way.
+nnoremap <leader>( viw<esc>a)<esc>hbi(<esc>lel
 nnoremap <leader>[ viw<esc>a]<esc>hbi[<esc>lel
-" <leader>fold to create a fold wrapping selection
-vmap <leader>fold mz:<Esc>'<O{{{<Esc>'>o}}}<Esc>`z?{{{<CR>A<Space>
-" <leader>" to wrap inner word in quotes
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
 " operator pending, inner prev/next brackets
@@ -105,17 +107,21 @@ nnoremap <leader>_ :sp<cr><C-w>w
 inoremap <Nul> <C-N>
 " a new log entry
 inoremap <c-l> <c-R>=LogEntry()<cr><esc>kkyypVr-o
+
 func! LogEntry ()
     return strftime("%Y%m%d {{{\n}}}\n")
 endfunc
-" ]]]
-" [[[ REPLACEMENTS
+
+" }
+
+" REPLACEMENTS {
 iab tau @author Galo Navarro <anglorvaroa@gmail.com>
 " iab tnow <ESC>:r !date +%Y%m%d<CR>kJA
 iab <expr> tnow strftime("%Y%m%d %H:%M:%S")
 iab <expr> tdat strftime("%Y%m%d")
-" ]]]
-" [[[ WILDMENU
+" }
+
+" WILDMENU {
 " make file/command completion have results count. allow tabbing along the
 " results
 set wildmenu
@@ -124,8 +130,9 @@ set wildignore+=target/**,*.class
 " It shows a menu and, if available, any additional tips such as the
 " method signature or defining file
 set completeopt=menu,preview
-" ]]]
-" [[[ VUNDLE SETUP (github.com/gmarik/vundle)
+" }
+
+" { VUNDLE SETUP (github.com/gmarik/vundle)
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 " let Vundle manage Vundle, required
@@ -147,19 +154,21 @@ Bundle 'airblade/vim-gitgutter.git'
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
-" ]]]
-" [[[ CTRL-P
+" }
+
+" { CTRL-P
 " see https://github.com/kien/ctrlp.vim
 nnoremap ,f :CtrlP<CR>
 " let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|\.mo$\|\.po$\|\pot$\|\.json$'
 let g:ctrlp_custom_ignore = '\.\(git\|hg\|svn\|mo\|po\|pot\|json\|jar\|class\|gif\|jpg\|jpeg\|png\|bin\|css\)$'
 let g:ctrlp_custom_ignore = '\.\(git\|hg\|svn\|jar\|class\|gif\|jpg\|jpeg\|png\|bin\)$'
 let g:ctrlp_working_path_mode = 'r'
-" ]]] 
-" For Java [[[
+" } 
+
+" For Java {
 " http://stackoverflow.com/questions/6411979/compiling-java-code-in-vim-more-efficiently/14727153#14727153 
 set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
 map <F2> :make<Return>:copen<Return>
 map <F3> :cprevious<Return>
 map <F4> :cnext<Return>
-" ]]]
+" }
