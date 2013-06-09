@@ -5,35 +5,34 @@ syntax on
 " ASSORTED CONFS {
 " let backspace past start of edit
 "     autoindenting and start of line
-set backspace=start,indent,eol 
-" line on col. textwitdh+1
-" set colorcolumn=+1
+set backspace=start,indent,eol
+set colorcolumn=81
+set completeopt=menu,preview " show a menu, and tips if available
 set cursorline " highlight cursor line
 set diffopt=vertical,filler,iwhite " options for diff mode
 set encoding=utf-8
 set errorformat=%m\ in\ %f\ on\ line\ %l
 set expandtab
-set formatoptions=t
+set fdm=marker
+set ff=unix
+set formatoptions=qrn1 " testing, before t
 set hlsearch " highlight all search matches
 set ignorecase
 set incsearch " find while searching
-set laststatus=2 
+set laststatus=2
 set linebreak
-" set list listchars=tab:>-
+set list
+set listchars=tab:»\ ,trail:⬞,precedes:«,extends:»,nbsp:⬞
 set makeprg=php\ -l\ % " check syntax on file & jump to error
 set modelines=1
 set mouse=a
 set nocompatible
+set nostartofline " make gg and G keep the column
 set number
-" so that ^wf finds the class file under cursor
-set path=**
+set path=** " ^wf finds the class file under cursor
 set ruler
-" folding
-set fdm=marker
-set ff=unix
 set scrolloff=3
 set shiftwidth=4
-set listchars=tab:»\ ,trail:⬞,precedes:«,extends:»,nbsp:⬞
 set showcmd
 set showmatch
 set showmode
@@ -41,11 +40,15 @@ set smartcase
 set smartindent
 set sw=4
 set tabstop=4
-set tags=$PWD/tags;/.  " set tags if generated 
-set tw=72
+set tags=$PWD/tags;/.  " set tags if generated
 set ttyfast " improve scrolling
 " set ttymouse=xterm2 " so that the mouse works inside tmux
+set tw=72
 set viminfo='20,<50,s10,h,% " remember some stuff after quiting vim:
+set wildignore+=target/**,*.class
+set wildmenu " file/command completion with results count, allow tabbing
+set wildmode=longest,full
+set wrap
 set wrapscan " make search go back to start of file
 " }
 
@@ -62,7 +65,6 @@ autocmd Filetype scala set makeprg=scalac\ %
 " MAPPINGS {
 " change personal modifier key to , instead of \.
 let mapleader = ","
-nnoremap <silent> <F10> :noh<CR>
 " Get rid of ex mode by accident
 nnoremap Q <nop>
 " Clear highlight
@@ -95,6 +97,9 @@ onoremap in' :<c-u>normal! f'vi'<cr>
 " operator pending, inner prev/next dbl quotes
 onoremap ip" :<c-u>normal! F"vi"<cr>
 onoremap in" :<c-u>normal! f"vi"<cr>
+" sane j, k movements for screen line, not file
+nnoremap j gj
+nnoremap k gk
 " comment line
 nnoremap <leader>7 0i//<esc>
 " comment visual area
@@ -102,9 +107,15 @@ vnoremap <leader>7 :s/^/\/\//g<cr>
 " quick vertical, horizontal splits
 nnoremap <leader>! :vs<cr><C-w>w
 nnoremap <leader>_ :sp<cr><C-w>w
+" clear trailing whitespace
+" nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " remap control-space to autocompletion
 " see http://robots.thoughtbot.com/post/27041742805/vim-you-complete-me
 inoremap <Nul> <C-N>
+" I need no help
+inoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+nnoremap <F1> <ESC>
 " a new log entry
 inoremap <c-l> <c-R>=LogEntry()<cr><esc>kkyypVr-o
 
@@ -119,17 +130,6 @@ iab tau @author Galo Navarro <anglorvaroa@gmail.com>
 " iab tnow <ESC>:r !date +%Y%m%d<CR>kJA
 iab <expr> tnow strftime("%Y%m%d %H:%M:%S")
 iab <expr> tdat strftime("%Y%m%d")
-" }
-
-" WILDMENU {
-" make file/command completion have results count. allow tabbing along the
-" results
-set wildmenu
-set wildmode=longest,full
-set wildignore+=target/**,*.class
-" It shows a menu and, if available, any additional tips such as the
-" method signature or defining file
-set completeopt=menu,preview
 " }
 
 " { VUNDLE SETUP (github.com/gmarik/vundle)
@@ -163,10 +163,10 @@ nnoremap ,f :CtrlP<CR>
 let g:ctrlp_custom_ignore = '\.\(git\|hg\|svn\|mo\|po\|pot\|json\|jar\|class\|gif\|jpg\|jpeg\|png\|bin\|css\)$'
 let g:ctrlp_custom_ignore = '\.\(git\|hg\|svn\|jar\|class\|gif\|jpg\|jpeg\|png\|bin\)$'
 let g:ctrlp_working_path_mode = 'r'
-" } 
+" }
 
 " For Java {
-" http://stackoverflow.com/questions/6411979/compiling-java-code-in-vim-more-efficiently/14727153#14727153 
+" http://stackoverflow.com/questions/6411979/compiling-java-code-in-vim-more-efficiently/14727153#14727153
 set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
 map <F2> :make<Return>:copen<Return>
 map <F3> :cprevious<Return>

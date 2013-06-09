@@ -19,7 +19,7 @@ hi Character cterm=NONE ctermfg=28 ctermbg=none
 hi Comment cterm=NONE ctermfg=240 ctermbg=none
 hi Constant cterm=NONE ctermfg=white ctermbg=none
 hi CursorLine cterm=NONE ctermbg=233
-hi ColorColumn cterm=NONE ctermbg=235
+hi ColorColumn cterm=NONE ctermbg=233
 hi Directory cterm=NONE ctermfg=white ctermbg=NONE
 hi File cterm=NONE ctermfg=white ctermbg=NONE
 hi Function cterm=NONE ctermfg=white ctermbg=none
