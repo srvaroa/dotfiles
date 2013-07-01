@@ -24,7 +24,8 @@ set linebreak
 set list
 set listchars=tab:»\ ,trail:⬞,precedes:«,extends:»,nbsp:⬞
 set makeprg=php\ -l\ % " check syntax on file & jump to error
-set modelines=1
+set modeline
+set modelines=5
 set mouse=a
 set nocompatible
 set nostartofline " make gg and G keep the column
@@ -143,6 +144,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'kana/vim-fakeclip'
 Bundle 'airblade/vim-gitgutter.git'
+Bundle 'bling/vim-airline.git'
 " non-github repos
 " Bundle 'git://git.wincent.com/command-t.git'
 " Brief help
