@@ -1,0 +1,4 @@
+# vim:ft=cmus
+# http://ft.bewatermyfriend.org/comp/cmus/rc.html
+set status_display_program=~/.cmus/post-fm
+set lib_sort=album tracknumber artist discnumber title filename
