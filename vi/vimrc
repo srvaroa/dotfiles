@@ -19,6 +19,7 @@ set formatoptions=qrn1 " testing, before t
 set hlsearch " highlight all search matches
 set ignorecase
 set incsearch " find while searching
+set lazyredraw " required by vim-airline, so far
 set laststatus=2
 set linebreak
 set list

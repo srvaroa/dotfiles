@@ -85,38 +85,22 @@ fi
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
-
-###########################
-######### CUSTOM ##########
-###########################
-
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -alF' # was -aCF
-alias notes='cd ~/Dropbox/notes && vi'
 alias mutt='cd && mutt'
 
-export PATH="$HOME/local/scala/bin:/usr/local/sbin/:$PATH"
+# TODO move this to env. specific files (or make env agnostic)
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_10.jdk/Contents/Home/"
 export SCALA_HOME="$HOME/local/scala"
+export M2_HOME="/usr/local/Cellar/maven/3.1.0"
+export M2="$M2_HOME/bin"
+export PATH="$SCALA_HOME/bin:$M2:/usr/local/bin:/usr/local/sbin/:$PATH"
+
 export LC_CTYPE=es_ES.UTF-8
 export LC_ALL=es_ES.UTF-8
 
 # vi mode
 set -o vi
-export EDITOR=vim
+export EDITOR=vi
