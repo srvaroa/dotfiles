@@ -89,13 +89,15 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -alF' # was -aCF
+alias gradle='gradle --daemon'
 alias mutt='cd && mutt'
 
 # TODO move this to env. specific files (or make env agnostic)
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_10.jdk/Contents/Home/"
 export SCALA_HOME="$HOME/local/scala"
-export M2_HOME="/usr/local/Cellar/maven/3.1.0"
+export M2_HOME="/usr/local/share/maven/3.1.0"
 export M2="$M2_HOME/bin"
+export MAVEN_OPTS='-Xmx512m -XX:MaxPermSize=128m'
 export PATH="$SCALA_HOME/bin:$M2:/usr/local/bin:/usr/local/sbin/:$PATH"
 
 export LC_CTYPE=es_ES.UTF-8

@@ -1,1 +1,1 @@
-COMMAND open %s
+COMMAND open -a "Google Chrome" %s
