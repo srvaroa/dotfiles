@@ -24,7 +24,6 @@ set laststatus=2
 set linebreak
 set list
 set listchars=tab:»\ ,trail:⬞,precedes:«,extends:»,nbsp:⬞
-set makeprg=php\ -l\ % " check syntax on file & jump to error
 set modeline
 set modelines=5
 set mouse=a
@@ -47,21 +46,11 @@ set ttyfast " improve scrolling
 " set ttymouse=xterm2 " so that the mouse works inside tmux
 set tw=72
 set viminfo='20,<50,s10,h,% " remember some stuff after quiting vim:
-set wildignore+=target/**,*.class
+set wildignore+=*.class
 set wildmenu " file/command completion with results count, allow tabbing
 set wildmode=longest,full
 set wrap
 set wrapscan " make search go back to start of file
-" }
-
-" SYNTAX ENFORCEMENT {
-au BufNewFile,BufRead *.phtml set filetype=php
-au BufRead,BufNewFile *.scala set filetype=scala
-au BufRead,BufNewFile *.md set filetype=markdown
-filetype plugin indent on " filetype and php autocomplete. The indent is for vundle
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd Filetype java set makeprg=javac\ %
-autocmd Filetype scala set makeprg=scalac\ %
 " }
 
 " MAPPINGS {
@@ -71,11 +60,14 @@ let mapleader = ","
 nnoremap Q <nop>
 " Clear highlight
 nnoremap <C-h> :noh<CR>
+" deal with readonly
+cmap w!! %!sudo tee > /dev/null %
 " disable arrow keys (or make them useful)
 map <up> <nop>
 map <down> <ESC><C-W>w
 map <left> <ESC>:tabp<CR>
 map <right> <ESC>:tabn<CR>
+map , ;
 inoremap <up> <nop>
 inoremap <down> <ESC><C-W>w
 inoremap <left> <ESC>:tabp<CR>
@@ -106,7 +98,7 @@ nnoremap k gk
 nnoremap <leader>7 0i//<esc>
 " comment visual area
 vnoremap <leader>7 :s/^/\/\//g<cr>
-" quick vertical, horizontal splits
+" quick vertical, horizontal split
 nnoremap <leader>! :vs<cr><C-w>w
 nnoremap <leader>_ :sp<cr><C-w>w
 " clear trailing whitespace
@@ -121,6 +113,15 @@ nnoremap <F1> <ESC>
 " a new log entry
 inoremap <c-l> <c-R>=LogEntry()<cr><esc>kkyypVr-o
 
+" ASSORTED NERDTREE
+" open/close
+nnoremap <C-n> :NERDTreeToggle<CR>
+" find current file in tree
+nnoremap <leader>s :NERDTreeFind<CR>
+
+" CTRL-P
+nnoremap ,f :CtrlP<CR>
+
 func! LogEntry ()
     return strftime("%Y%m%d {{{\n}}}\n")
 endfunc
@@ -134,6 +135,18 @@ iab <expr> tnow strftime("%Y%m%d %H:%M:%S")
 iab <expr> tdat strftime("%Y%m%d")
 " }
 
+" SYNTAX ENFORCEMENT {
+au BufNewFile,BufRead *.phtml set filetype=php
+au BufRead,BufNewFile *.scala set filetype=scala
+au BufRead,BufNewFile *.md set filetype=markdown
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd Filetype java set makeprg=javac\ %
+autocmd Filetype scala set makeprg=scalac\ %
+" Vundle needs filetype off 
+filetype plugin indent on " filetype and php autocomplete. The indent is for vundle
+filetype off
+" }
+
 " { VUNDLE SETUP (github.com/gmarik/vundle)
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -142,11 +155,19 @@ Bundle 'gmarik/vundle'
 " add your bundles here
 " original repos on github
 Bundle 'kien/ctrlp.vim'
+" git
 Bundle 'tpope/vim-fugitive'
-Bundle 'kana/vim-fakeclip'
+" show diff on the side
 Bundle 'airblade/vim-gitgutter.git'
+" fancy status line
 Bundle 'bling/vim-airline.git'
-" non-github repos
+" snippets
+Bundle 'SirVer/ultisnips.git'
+" auto delimiter closing
+Bundle 'Raimondi/delimitMate.git'
+" nerdtree
+Bundle 'scrooloose/nerdtree'
+" non-github repos, e.g.:
 " Bundle 'git://git.wincent.com/command-t.git'
 " Brief help
 " :BundleList          - list configured bundles
@@ -157,13 +178,11 @@ Bundle 'bling/vim-airline.git'
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
+filetype on
 " }
 
 " { CTRL-P
-" see https://github.com/kien/ctrlp.vim
-nnoremap ,f :CtrlP<CR>
-" let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|\.mo$\|\.po$\|\pot$\|\.json$'
-let g:ctrlp_custom_ignore = '\.\(git\|hg\|svn\|mo\|po\|pot\|json\|jar\|class\|gif\|jpg\|jpeg\|png\|bin\|css\)$'
+" https://github.com/kien/ctrlp.vim
 let g:ctrlp_custom_ignore = '\.\(git\|hg\|svn\|jar\|class\|gif\|jpg\|jpeg\|png\|bin\)$'
 let g:ctrlp_working_path_mode = 'r'
 " }
