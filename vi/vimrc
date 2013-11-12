@@ -46,7 +46,7 @@ set ttyfast " improve scrolling
 " set ttymouse=xterm2 " so that the mouse works inside tmux
 set tw=72
 set viminfo='20,<50,s10,h,% " remember some stuff after quiting vim:
-set wildignore+=*.class
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,idea,target
 set wildmenu " file/command completion with results count, allow tabbing
 set wildmode=longest,full
 set wrap
@@ -67,7 +67,6 @@ map <up> <nop>
 map <down> <ESC><C-W>w
 map <left> <ESC>:tabp<CR>
 map <right> <ESC>:tabn<CR>
-map , ;
 inoremap <up> <nop>
 inoremap <down> <ESC><C-W>w
 inoremap <left> <ESC>:tabp<CR>
@@ -110,21 +109,22 @@ inoremap <Nul> <C-N>
 inoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 nnoremap <F1> <ESC>
+
 " a new log entry
-inoremap <c-l> <c-R>=LogEntry()<cr><esc>kkyypVr-o
-
-" ASSORTED NERDTREE
-" open/close
-nnoremap <C-n> :NERDTreeToggle<CR>
-" find current file in tree
-nnoremap <leader>s :NERDTreeFind<CR>
-
-" CTRL-P
-nnoremap ,f :CtrlP<CR>
-
 func! LogEntry ()
     return strftime("%Y%m%d {{{\n}}}\n")
 endfunc
+inoremap <C-l> <c-R>=LogEntry()<cr><esc>kkyypVr-o
+
+" PLUGIN RELATED
+" ctrl-p find file
+nnoremap ,f :CtrlP<CR>
+" nerdtree toggle
+nnoremap <C-n> :NERDTreeToggle<CR>
+" nerdtree find current file in tree
+nnoremap <leader>s :NERDTreeFind<CR>
+" vim-taglist toggle
+nnoremap <leader>l :TlistToggle<CR>
 
 " }
 
@@ -133,6 +133,7 @@ iab tau @author Galo Navarro <anglorvaroa@gmail.com>
 " iab tnow <ESC>:r !date +%Y%m%d<CR>kJA
 iab <expr> tnow strftime("%Y%m%d %H:%M:%S")
 iab <expr> tdat strftime("%Y%m%d")
+
 " }
 
 " SYNTAX ENFORCEMENT {
@@ -159,6 +160,9 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
 " show diff on the side
 Bundle 'airblade/vim-gitgutter.git'
+" detect project root, so make works with jvm langs
+" see http://www.lucianofiandesio.com/vim-configuration-for-happy-java-coding
+Bundle 'airblade/vim-rooter.git'
 " fancy status line
 Bundle 'bling/vim-airline.git'
 " snippets
@@ -167,6 +171,8 @@ Bundle 'SirVer/ultisnips.git'
 Bundle 'Raimondi/delimitMate.git'
 " nerdtree
 Bundle 'scrooloose/nerdtree'
+" taglis"
+Bundle 'vim-scripts/taglist.vim.git'
 " non-github repos, e.g.:
 " Bundle 'git://git.wincent.com/command-t.git'
 " Brief help
@@ -183,14 +189,14 @@ filetype on
 
 " { CTRL-P
 " https://github.com/kien/ctrlp.vim
-let g:ctrlp_custom_ignore = '\.\(git\|hg\|svn\|jar\|class\|gif\|jpg\|jpeg\|png\|bin\)$'
 let g:ctrlp_working_path_mode = 'r'
 " }
 
 " For Java {
 " http://stackoverflow.com/questions/6411979/compiling-java-code-in-vim-more-efficiently/14727153#14727153
 set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
-map <F2> :make<Return>:copen<Return>
 map <F3> :cprevious<Return>
 map <F4> :cnext<Return>
+" compile
+map <F5> :wa<CR>:compiler gradle<CR>:make compileScala compileJava<CR>:cw 4<CR>
 " }
