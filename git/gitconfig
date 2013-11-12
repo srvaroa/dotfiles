@@ -5,14 +5,22 @@
     editor = vim
 [color]
     ui = true
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
 [diff]
     tool = vimdiff
+[gc]
+    auto = 1
 [merge]
+    summary = true
     tool = vimdiff
 [mergetool "vimdiff"]
     cmd = vim -f -d \"$2\" \"$5\"
 [alias]
     lg = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     st = status
-[help]
-	autocorrect = 1
+    ci = commit
+    cis = commit -s
+    co = checkout

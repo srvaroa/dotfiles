@@ -94,11 +94,10 @@ alias mutt='cd && mutt'
 
 # TODO move this to env. specific files (or make env agnostic)
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_10.jdk/Contents/Home/"
-export SCALA_HOME="$HOME/local/scala"
 export M2_HOME="/usr/local/share/maven/3.1.0"
 export M2="$M2_HOME/bin"
 export MAVEN_OPTS='-Xmx1024m -XX:MaxPermSize=256m'
-export PATH="$SCALA_HOME/bin:$M2:/usr/local/bin:/usr/local/sbin/:$PATH"
+export PATH="$M2:/usr/local/bin:/usr/local/sbin/:$PATH"
 
 export LC_CTYPE=es_ES.UTF-8
 export LC_ALL=es_ES.UTF-8

@@ -2,3 +2,29 @@
 # http://ft.bewatermyfriend.org/comp/cmus/rc.html
 set status_display_program=~/.cmus/post-fm
 set lib_sort=album tracknumber artist discnumber title filename
+
+### colors {{{
+set color_cmdline_bg=black
+set color_cmdline_fg=244
+set color_error=lightred
+set color_info=lightyellow
+set color_separator=cyan
+set color_statusline_bg=cyan
+set color_statusline_fg=black
+set color_titleline_bg=240
+set color_titleline_fg=white
+set color_win_bg=black
+set color_win_cur=11
+set color_win_cur_sel_bg=cyan
+set color_win_cur_sel_fg=11
+set color_win_dir=cyan
+set color_win_fg=245
+set color_win_inactive_cur_sel_bg=cyan
+set color_win_inactive_cur_sel_fg=black
+set color_win_inactive_sel_bg=gray
+set color_win_inactive_sel_fg=black
+set color_win_sel_bg=cyan
+set color_win_sel_fg=black
+set color_win_title_bg=cyan
+set color_win_title_fg=black
+### }}}}
