@@ -171,8 +171,8 @@ Bundle 'SirVer/ultisnips.git'
 Bundle 'Raimondi/delimitMate.git'
 " nerdtree
 Bundle 'scrooloose/nerdtree'
-" taglis"
-Bundle 'vim-scripts/taglist.vim.git'
+" taglist
+" Bundle 'vim-scripts/taglist.vim.git'
 " non-github repos, e.g.:
 " Bundle 'git://git.wincent.com/command-t.git'
 " Brief help
