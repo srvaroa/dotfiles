@@ -1,0 +1,35 @@
+# vim: filetype=muttrc
+# basic monocolor screen
+mono  bold          bold
+mono  underline     underline
+mono  indicator     reverse
+mono  error         bold
+
+# colours for mutt
+color attachment yellow default
+color hdrdefault cyan default
+color indicator brightwhite blue
+color markers	brightred default
+color normal	white default
+color quoted	green default
+color signature cyan default
+color status	cyan black
+color tilde	blue default
+color tree	red default
+
+color index	green default ~N	# new new messages
+color index	brightgreen default ~O	# old new messages
+color index	red default ~D	# deleted
+color index	yellow default ~T 	# to me	
+
+color header	green default ^From:
+color header	cyan default ^To:
+color header	cyan default ^Reply-To:
+color header	cyan default ^Cc:
+color header	brightblue default ^Subject:
+
+color body	green	default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+# identifies email addresses
+
+color body	brightblue default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+# identifies URLs
