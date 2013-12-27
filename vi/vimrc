@@ -19,7 +19,6 @@ set formatoptions=qrn1 " testing, before t
 set hlsearch " highlight all search matches
 set ignorecase
 set incsearch " find while searching
-set lazyredraw " required by vim-airline, so far
 set laststatus=2
 set linebreak
 set list
@@ -164,7 +163,7 @@ Bundle 'airblade/vim-gitgutter.git'
 " see http://www.lucianofiandesio.com/vim-configuration-for-happy-java-coding
 Bundle 'airblade/vim-rooter.git'
 " fancy status line
-Bundle 'bling/vim-airline.git'
+Bundle 'itchyny/lightline.vim'
 " snippets
 Bundle 'SirVer/ultisnips.git'
 " auto delimiter closing
@@ -185,6 +184,11 @@ Bundle 'scrooloose/nerdtree'
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
 filetype on
+" }
+
+" VIM-AIRLINE {
+" let g:airline#extensions#tabline#enabled = 1
+set lazyredraw " required by vim-airline, so far
 " }
 
 " { CTRL-P
