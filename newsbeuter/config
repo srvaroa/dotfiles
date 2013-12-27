@@ -35,8 +35,11 @@ feedlist-format "%S%n %11u %t"
 articlelist-format "%D %f %?T?;%-17T; ?%t"
 datetime-format %y-%m-%d
 
-color listnormal color244 black
-color listfocus white color235
-color info color136 color235
-color background color244 black
 color article color246 black
+color background          color244   black
+color background color244 black
+color info color136 color235
+color listfocus white color235
+color listfocus_unread    yellow black bold
+color listnormal color244 black
+color listnormal_unread   blue black
