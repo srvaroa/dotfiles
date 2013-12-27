@@ -51,13 +51,56 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+RED="\[\033[0;31m\]"
+YELLOW="\[\033[0;33m\]"
+MAGENTA="\[\033[0;95m\]"
+D_GREEN="\[\033[0;32m\]"
+L_GREEN="\[\033[1;32m\]"
+BLUE="\[\033[0;34m\]"
+NO_COLOUR="\[\033[0m\]"
+
+function git_branch() {
+    # bail if no git
+    if ! hash git 2> /dev/null ; then
+        return
+    fi
+    # get the branch
+    br=`git branch 2> /dev/null | grep -e "^*" | cut -d' ' -f2`
+    if [[ ! $br ]] ; then
+        return
+    fi
+    echo " $br"
+}
+
+# colour codes the git branch with:
+# RED - if deleted files
+# LIGHT GREEN - if untracked files
+# DARK GREEN - if changes in staged or unstaged files
+function git_status_colour() {
+    ret=""
+    st=`git status --porcelain 2> /dev/null`
+    if [[ `echo $st | grep -e "^D"` ]] ; then
+        echo -ne ${RED:2:10}
+    elif [[ `echo $st | grep -e "^?"` ]] ; then
+        echo -ne ${L_GREEN:2:10}
+    elif [[ `echo $st | grep -e "^M"` ]] ; then
+        echo -ne ${D_GREEN:2:10}
+    elif [[ `echo $st | grep -e "^A"` ]] ; then
+        echo -ne ${YELLOW:2:10}
+    else
+        echo -ne ${MAGENTA:2:10}
+    fi
+}
+
 if [ "$color_prompt" = yes ]; then
-	# this below will display a red $ when a command fails
-	PROMPT_COMMAND='RET=$?;'
-	RET_COLOR='$(if [[ $RET = 0 ]]; then echo -ne "\e[0;00m"; else echo -ne "\e[0;31m"; fi;)'
-    PS1="\${debian_chroot:+($debian_chroot)}\[\033[32m\]\u@\[\033[01;32m\]\h:\[\033[00;34m\]\w\[$RET_COLOR\]\$\[\033[00m\] "
+    # this below will display a red $ when a command fails
+    PROMPT_COMMAND='RET=$?;'
+    RET_COLOR='$(if [[ $RET = 0 ]]; then echo -ne "\e[0;00m"; else echo -ne "\e[0;31m"; fi;)'
+    GIT_COLOR='$(git_status_colour)'
+    # PS1="\${debian_chroot:+($debian_chroot)}\[\033[32m\]\u@\[\033[01;32m\]\h:\[\033[00;34m\]\w\$(git_branch)\[$RET_COLOR\]\$\[\033[00m\] "
+    PS1="\${debian_chroot:+($debian_chroot)}$D_GREEN\u@$L_GREEN\h:$BLUE\w\[$(git_status_colour)\]\$(git_branch)\[$RET_COLOR\] \$${NO_COLOUR} "
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w \$(git_branch) \$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -85,10 +128,14 @@ fi
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+# vi mode
+set -o vi
+export EDITOR=vi
+
 # some more ls aliases
+alias l='ls -alFh'
 alias ll='ls -alFh'
 alias la='ls -A'
-alias l='ls -alFh'
 alias gradle='gradle --daemon'
 alias mutt='cd && mutt'
 
@@ -102,6 +149,3 @@ export PATH="/usr/bin:$M2:/usr/local/bin:/usr/local/sbin:$PATH"
 export LC_CTYPE=es_ES.UTF-8
 export LC_ALL=es_ES.UTF-8
 
-# vi mode
-set -o vi
-export EDITOR=vi
