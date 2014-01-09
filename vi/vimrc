@@ -34,7 +34,7 @@ set ruler
 set scrolloff=3
 set shiftwidth=4
 set showcmd
-set showmatch
+set showmatch " show matching braces when indicator is over
 set showmode
 set smartcase
 set smartindent
@@ -136,8 +136,10 @@ iab <expr> tdat strftime("%Y%m%d")
 " }
 
 " SYNTAX ENFORCEMENT {
+" are these really necessary? ftdetect/* files should do this
 au BufNewFile,BufRead *.phtml set filetype=php
 au BufRead,BufNewFile *.scala set filetype=scala
+au BufRead,BufNewFile *.java set filetype=java
 au BufRead,BufNewFile *.md set filetype=markdown
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd Filetype java set makeprg=javac\ %
