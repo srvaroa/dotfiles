@@ -95,10 +95,11 @@ function git_status_colour() {
 if [ "$color_prompt" = yes ]; then
     # this below will display a red $ when a command fails
     PROMPT_COMMAND='RET=$?;'
-    RET_COLOR='$(if [[ $RET = 0 ]]; then echo -ne "\e[0;00m"; else echo -ne "\e[0;31m"; fi;)'
+    #RET_COLOR='$(if [[ $RET = 0 ]]; then echo -ne "\e[0;00m"; else echo -ne "\e[0;31m"; fi;)'
+    RET_COLOR='$(if [[ $RET = 0 ]]; then echo -ne "\e[0;34m"; else echo -ne "\e[0;31m"; fi;)'
     GIT_COLOR='$(git_status_colour)'
-    # PS1="\${debian_chroot:+($debian_chroot)}\[\033[32m\]\u@\[\033[01;32m\]\h:\[\033[00;34m\]\w\$(git_branch)\[$RET_COLOR\]\$\[\033[00m\] "
-    PS1="\${debian_chroot:+($debian_chroot)}$D_GREEN\u@$L_GREEN\h:$BLUE\w\[$(git_status_colour)\]\$(git_branch)\[$RET_COLOR\] \$${NO_COLOUR} "
+    #PS1="\${debian_chroot:+($debian_chroot)}$D_GREEN\u@$L_GREEN\h:$BLUE\w\[$(git_status_colour)\]\$(git_branch)\[$RET_COLOR\] \$${NO_COLOUR} "
+    PS1="\${debian_chroot:+($debian_chroot)}$L_GREEN\h $D_GREEN\u $RET_COLOR\w\[$(git_status_colour)\]\$(git_branch)${NO_COLOUR} "
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w \$(git_branch) \$ '
 fi
