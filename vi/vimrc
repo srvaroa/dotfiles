@@ -152,6 +152,8 @@ filetype off
 " { VUNDLE SETUP (github.com/gmarik/vundle)
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+" json support
+" Bundle 'elzr/vim-json'
 " let Vundle manage Vundle, required
 Bundle 'gmarik/vundle'
 " add your bundles here
