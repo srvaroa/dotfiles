@@ -4,46 +4,47 @@
 " http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim?file=Xterm-color-table.png
 set background=dark
 if version > 580
-	hi clear
-	if exists("syntax_on")
-		syntax reset
-	endif
+  hi clear
+  if exists("syntax_on")
+    syntax reset
+  endif
 endif
 
 set t_Co=256
 let g:colors_name = "varoa"
 
-hi Normal cterm=NONE ctermfg=246 ctermbg=none
-hi Boolean cterm=NONE ctermfg=28 ctermbg=none
-hi Character cterm=NONE ctermfg=28 ctermbg=none
-hi Comment cterm=NONE ctermfg=240 ctermbg=none
-hi Constant cterm=NONE ctermfg=white ctermbg=none
+hi Normal cterm=NONE ctermfg=246 ctermbg=NONE
+hi Boolean cterm=NONE ctermfg=fg ctermbg=NONE
+hi Character cterm=NONE ctermfg=fg ctermbg=NONE
+hi Comment cterm=NONE ctermfg=240 ctermbg=NONE
+hi Constant cterm=NONE ctermfg=white ctermbg=NONE
+hi Conditional cterm=NONE ctermfg=fg ctermbg=NONE
 hi CursorLine cterm=NONE ctermbg=233
 hi ColorColumn cterm=NONE ctermbg=233 ctermfg=246
 hi Directory cterm=NONE ctermfg=white ctermbg=NONE
 hi File cterm=NONE ctermfg=white ctermbg=NONE
-hi Function cterm=NONE ctermfg=white ctermbg=none
-hi Identifier cterm=NONE ctermfg=white ctermbg=none
-hi Include cterm=NONE ctermfg=fg ctermbg=none
-hi Keyword cterm=NONE ctermfg=fg
+hi Function cterm=NONE ctermfg=29 ctermbg=NONE
+hi Identifier cterm=NONE ctermfg=fg ctermbg=NONE
+hi Include cterm=NONE ctermfg=fg ctermbg=NONE
+hi Keyword cterm=NONE ctermfg=240
 hi LineNr cterm=NONE ctermfg=238 ctermbg=233
-hi MatchParen cterm=NONE ctermfg=yellow ctermbg=19
-hi NonText cterm=NONE ctermfg=22 ctermbg=none
-hi Number cterm=NONE ctermfg=28 ctermbg=none
+hi MatchParen cterm=NONE ctermfg=red ctermbg=19
+hi NonText cterm=NONE ctermfg=22 ctermbg=NONE
+hi Number cterm=NONE ctermfg=28 ctermbg=NONE
 hi PreProc cterm=NONE ctermfg=28 ctermbg=NONE
-hi Special cterm=NONE ctermfg=white ctermbg=none
-hi SpecialComment cterm=NONE ctermfg=250 ctermbg=none
-hi SpecialKey gui=None cterm=None ctermfg=243 guifg=#767676 ctermbg=None guibg=None
+hi Special cterm=NONE ctermfg=white ctermbg=NONE
+hi SpecialComment cterm=NONE ctermfg=250 ctermbg=NONE
+hi SpecialKey gui=NONE cterm=NONE ctermfg=243 guifg=#767676 ctermbg=NONE guibg=NONE
 hi Statement cterm=NONE ctermfg=white
-hi String cterm=NONE ctermfg=28 ctermbg=none
+hi String cterm=NONE ctermfg=fg ctermbg=NONE
 hi Type cterm=NONE ctermfg=white ctermbg=NONE
 hi VertSplit cterm=NONE ctermfg=238 ctermbg=233
 hi Visual cterm=NONE ctermfg=yellow ctermbg=19
-hi Todo cterm=none ctermfg=yellow ctermbg=none
+hi Todo cterm=NONE ctermfg=yellow ctermbg=NONE
 
 " search
-hi IncSearch cterm=NONE ctermfg=17 ctermbg=166
-hi Search cterm=NONE ctermfg=17 ctermbg=yellow
+hi IncSearch cterm=NONE ctermfg=250 ctermbg=90
+hi Search cterm=NONE ctermfg=142 ctermbg=19
 
 " menu
 hi PMenu cterm=NONE ctermfg=yellow ctermbg=4
@@ -59,23 +60,23 @@ hi StatusLineNC cterm=NONE ctermbg=white ctermbg=235
 hi Folded ctermfg=245 ctermbg=235 cterm=NONE
 
 " diff
-hi DiffAdd cterm=none ctermfg=white ctermbg=28
-hi DiffChange cterm=none ctermfg=white ctermbg=4
-hi DiffDelete cterm=none ctermfg=white ctermbg=160
-hi DiffText cterm=none ctermfg=none ctermbg=none
+hi DiffAdd cterm=NONE ctermfg=white ctermbg=28
+hi DiffChange cterm=NONE ctermfg=white ctermbg=4
+hi DiffDelete cterm=NONE ctermfg=white ctermbg=160
+hi DiffText cterm=NONE ctermfg=NONE ctermbg=NONE
 
 " MARKDOWN
 " ========
-hi markdownHeadingRule cterm=none ctermbg=black ctermfg=28
+hi markdownHeadingRule cterm=NONE ctermbg=black ctermfg=28
 hi markdownBold cterm=bold ctermbg=black ctermfg=white
 hi markdownItalic cterm=bold ctermbg=black ctermfg=white
 hi markdownCodeBlock cterm=bold	ctermbg=black ctermfg=240
-hi markdownUrl cterm=none	ctermbg=black ctermfg=darkblue
-hi markdownUrlDelimiter cterm=none ctermbg=black ctermfg=white
-hi markdownUrlTitle cterm=none ctermbg=black ctermfg=none
-hi markdownUrlTitleDelimiter cterm=none ctermbg=black ctermfg=white
-hi markdownLinkText cterm=none ctermbg=black ctermfg=yellow
-hi markdownLinkDelimiter cterm=none ctermbg=black ctermfg=white
+hi markdownUrl cterm=NONE	ctermbg=black ctermfg=darkblue
+hi markdownUrlDelimiter cterm=NONE ctermbg=black ctermfg=white
+hi markdownUrlTitle cterm=NONE ctermbg=black ctermfg=NONE
+hi markdownUrlTitleDelimiter cterm=NONE ctermbg=black ctermfg=white
+hi markdownLinkText cterm=NONE ctermbg=black ctermfg=yellow
+hi markdownLinkDelimiter cterm=NONE ctermbg=black ctermfg=white
 " hi markdownListMarker cterm=bold	ctermbg=black ctermfg=yellow guibg=black guifg=yellow
 " hi markdownOrderedListMarker cterm=bold	ctermbg=black ctermfg=brown guibg=black guifg=brown
 
