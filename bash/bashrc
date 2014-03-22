@@ -99,7 +99,7 @@ if [ "$color_prompt" = yes ]; then
     RET_COLOR='$(if [[ $RET = 0 ]]; then echo -ne "\e[0;34m"; else echo -ne "\e[0;31m"; fi;)'
     GIT_COLOR='$(git_status_colour)'
     #PS1="\${debian_chroot:+($debian_chroot)}$D_GREEN\u@$L_GREEN\h:$BLUE\w\[$(git_status_colour)\]\$(git_branch)\[$RET_COLOR\] \$${NO_COLOUR} "
-    PS1="\${debian_chroot:+($debian_chroot)}$L_GREEN\h $D_GREEN\u \[$RET_COLOR\]\w\[$(git_status_colour)\]\$(git_branch)${NO_COLOUR} "
+    PS1="\${debian_chroot:+($debian_chroot)}$L_GREEN\h $D_GREEN\u \[$RET_COLOR\]\w\[$(git_status_colour)\]\$(git_branch) ${NO_COLOUR}"
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w \$(git_branch) \$ '
 fi
@@ -144,7 +144,10 @@ alias mutt='cd && mutt'
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_10.jdk/Contents/Home/"
 export M2_HOME="/usr/local/share/maven/3.1.0"
 export M2="$M2_HOME/bin"
-export MAVEN_OPTS='-Xmx1024m -XX:MaxPermSize=256m'
+
+export SBT_OPTS="-XX:MaxPermSize=512m -Xms2048m -Xmx2048m"
+export MAVEN_OPTS='-XX:MaxPermSize=256m -Xms1024m -Xmx1024m'
+export GRADLE_OPTS='-XX:MaxPermSize=256m -Xms1024m -Xmx1024m'
 export PATH="/usr/bin:$M2:/usr/local/bin:/usr/local/sbin:$PATH"
 
 export LC_CTYPE=es_ES.UTF-8
