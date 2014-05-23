@@ -95,7 +95,7 @@ onoremap in" :<c-u>normal! f"vi"<cr>
 nnoremap j gj
 nnoremap k gk
 " comment line
-nnoremap <leader>7 0i//<esc>
+nnoremap <leader>/ 0i//<esc>
 " comment visual area
 vnoremap <leader>7 :s/^/\/\//g<cr>
 " quick vertical, horizontal split
@@ -111,12 +111,15 @@ inoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 " Y works as D or C, yank to EOL
-map Y y$ 
+map Y y$
 " a new log entry
 func! LogEntry ()
     return strftime("%Y%m%d {{{\n}}}\n")
 endfunc
 inoremap <C-l> <c-R>=LogEntry()<cr><esc>kkyypVr-o
+
+" merge: find next conflict
+nnoremap <C-i> /=====<enter>
 
 " PLUGIN RELATED
 " ctrl-p find file
@@ -131,8 +134,6 @@ nnoremap <leader>l :TlistToggle<CR>
 " }
 
 " REPLACEMENTS {
-iab tau @author Galo Navarro <anglorvaroa@gmail.com>
-" iab tnow <ESC>:r !date +%Y%m%d<CR>kJA
 iab <expr> tnow strftime("%Y%m%d %H:%M:%S")
 iab <expr> tdat strftime("%Y%m%d")
 
@@ -179,6 +180,8 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'scrooloose/nerdtree'
 " solarized
 Bundle 'altercation/vim-colors-solarized'
+" multiple cursors
+Bundle 'terryma/vim-multiple-cursors'
 " taglist
 " Bundle 'vim-scripts/taglist.vim.git'
 " non-github repos, e.g.:

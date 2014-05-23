@@ -24,3 +24,4 @@
     ci = commit
     cis = commit -s
     co = checkout
+    sub = submodule update --init --recursive
