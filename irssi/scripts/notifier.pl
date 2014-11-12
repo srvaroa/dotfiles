@@ -129,7 +129,7 @@ sub notifier_privmsg {
 Irssi::settings_add_str('misc', 'notifier_on_regex', 0);      # false
 Irssi::settings_add_str('misc', 'notifier_channel_regex', 0); # false
 Irssi::settings_add_str('misc', 'notifier_on_nick', 1);       # true
-Irssi::settings_add_str('misc', 'notifier_on_privmsg', 1);    # true
+Irssi::settings_add_str('misc', 'notifier_on_privmsg', 0);    # false
 Irssi::signal_add('message public', 'notifier_message');
 Irssi::signal_add('message private', 'notifier_message');
 Irssi::signal_add('message own_public', 'notifier_message');

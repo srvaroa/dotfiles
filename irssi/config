@@ -197,10 +197,8 @@ settings = {
     autolog_path = "~/irclogs/$tag/$0.log";
   };
   "perl/core/scripts" = {
-    notifier_on_regex = "galo";
-    notifier_on_regex = "galo_";
-    notifier_on_regex = "coffee";
-    notifier_on_regex = "food";
+    notifier_on_regex = "galo.*";
+    notifier_on_regex = "srvaroa";
     notifier_on_privmsg = "1";
     notifier_on_nick = "1";
   };
