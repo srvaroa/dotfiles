@@ -125,7 +125,7 @@ nnoremap <C-i> /=====<enter>
 " ctrl-p find file
 nnoremap ,f :CtrlP<CR>
 " nerdtree toggle
-nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
 " nerdtree find current file in tree
 nnoremap <leader>s :NERDTreeFind<CR>
 " vim-taglist toggle
@@ -178,10 +178,15 @@ Bundle 'SirVer/ultisnips'
 Bundle 'Raimondi/delimitMate'
 " nerdtree
 Bundle 'scrooloose/nerdtree'
+" syntastic
+" Bundle 'scrooloose/syntastic'
 " solarized
 Bundle 'altercation/vim-colors-solarized'
 " multiple cursors
 Bundle 'terryma/vim-multiple-cursors'
+" vim-gradle
+Bundle 'tfnico/vim-gradle'
+
 " taglist
 " Bundle 'vim-scripts/taglist.vim.git'
 " non-github repos, e.g.:
@@ -207,7 +212,7 @@ set lazyredraw " required by vim-airline, so far
 " https://github.com/kien/ctrlp.vim
 let g:ctrlp_working_path_mode = 'r'
 " }
-
+"
 " For Java {
 " http://stackoverflow.com/questions/6411979/compiling-java-code-in-vim-more-efficiently/14727153#14727153
 set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#

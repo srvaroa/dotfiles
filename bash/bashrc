@@ -142,19 +142,16 @@ alias l='ls -alFh'
 alias ll='ls -alFh'
 alias la='ls -A'
 alias gradle='gradle --daemon'
+alias gw='./gradlew --daemon'
 alias mutt='cd && mutt'
 alias vi='vim'
 alias vi16='vim -u .vimrc_16'
 
 # TODO move this to env. specific files (or make env agnostic)
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_10.jdk/Contents/Home/"
-export M2_HOME="/usr/local/share/maven/3.1.0"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/"
+export M2_HOME="/usr/share/maven"
 export M2="$M2_HOME/bin"
 
-export SBT_OPTS="-XX:MaxPermSize=512m -Xms2048m -Xmx2048m"
 export MAVEN_OPTS='-XX:MaxPermSize=256m -Xms1024m -Xmx1024m'
 export GRADLE_OPTS='-XX:MaxPermSize=256m -Xms1024m -Xmx1024m'
 export PATH="/usr/bin:$M2:/usr/local/sbin:/usr/local/bin:$PATH"
-
-export LC_CTYPE=es_ES.UTF-8
-export LC_ALL=es_ES.UTF-8
