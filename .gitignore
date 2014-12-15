@@ -2,3 +2,4 @@
 *.swp
 vi/vim/bundle/*
 !vi/vim/bundle/vundle
+.netrwhist
