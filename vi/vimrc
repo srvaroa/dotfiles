@@ -47,7 +47,7 @@ set ttyfast " improve scrolling
 " set ttymouse=xterm2 " so that the mouse works inside tmux
 set tw=72
 set viminfo='20,<50,s10,h,% " remember some stuff after quiting vim:
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,idea,target
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,idea,target,*.xml
 set wildmenu " file/command completion with results count, allow tabbing
 set wildmode=longest,full
 set wrap
@@ -184,7 +184,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'altercation/vim-colors-solarized'
 " multiple cursors
 Bundle 'terryma/vim-multiple-cursors'
-" vim-gradle
 Bundle 'tfnico/vim-gradle'
 
 " taglist
