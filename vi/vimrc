@@ -40,6 +40,9 @@ set showmatch " show matching braces when indicator is over
 set showmode
 set smartcase
 set smartindent
+" in :find vim will try adding these suffixes
+set suffixesadd+=.scala
+set suffixesadd+=.java
 set sw=4
 set tabstop=4
 set tags=$PWD/tags;/.  " set tags if generated
@@ -47,7 +50,7 @@ set ttyfast " improve scrolling
 " set ttymouse=xterm2 " so that the mouse works inside tmux
 set tw=72
 set viminfo='20,<50,s10,h,% " remember some stuff after quiting vim:
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,idea,target,*.xml
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,idea,target,*.xml,*.html
 set wildmenu " file/command completion with results count, allow tabbing
 set wildmode=longest,full
 set wrap
@@ -124,7 +127,7 @@ nnoremap <C-i> /=====<enter>
 " PLUGIN RELATED
 " ctrl-p find file
 nnoremap ,f :CtrlP<CR>
-" nerdtree toggle
+" nerdtree toggle)
 nnoremap <leader>n :NERDTreeToggle<CR>
 " nerdtree find current file in tree
 nnoremap <leader>s :NERDTreeFind<CR>
@@ -148,6 +151,8 @@ au BufRead,BufNewFile *.md set filetype=markdown
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd Filetype java set makeprg=javac\ %
 autocmd Filetype scala set makeprg=scalac\ %
+" some plugin insists on overriding this
+autocmd Filetype scala set softtabstop=4
 " Vundle needs filetype off 
 filetype plugin indent on " filetype and php autocomplete. The indent is for vundle
 filetype off
@@ -157,27 +162,22 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 " json support
-" Bundle 'elzr/vim-json'
+" Plugin 'elzr/vim-json'
 " let Vundle manage Vundle, required
-Bundle 'gmarik/vundle'
-" add your bundles here
-" original repos on github
-Bundle 'kien/ctrlp.vim'
-" git
-Bundle 'tpope/vim-fugitive'
-" show diff on the side
-Bundle 'airblade/vim-gitgutter'
+Plugin 'gmarik/vundle'
+
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 " detect project root, so make works with jvm langs
 " see http://www.lucianofiandesio.com/vim-configuration-for-happy-java-coding
-Bundle 'airblade/vim-rooter'
-" fancy status line
-Bundle 'itchyny/lightline.vim'
-" snippets
-Bundle 'SirVer/ultisnips'
-" auto delimiter closing
-Bundle 'Raimondi/delimitMate'
-" nerdtree
-Bundle 'scrooloose/nerdtree'
+Plugin 'airblade/vim-rooter'
+Plugin 'itchyny/lightline.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'Raimondi/delimitMate'
+Plugin 'scrooloose/nerdtree'
+" Plugin 'derekwyatt/vim-scala'
+" Plugin 'rustushki/JavaImp.vim'
 " syntastic
 " Bundle 'scrooloose/syntastic'
 " solarized
@@ -212,11 +212,16 @@ set lazyredraw " required by vim-airline, so far
 let g:ctrlp_working_path_mode = 'r'
 " }
 "
+" { FUGITIVE
+" Ggrep -> quickfix window
+autocmd QuickFixCmdPost *grep* cwindow
+" }
+
 " For Java {
 " http://stackoverflow.com/questions/6411979/compiling-java-code-in-vim-more-efficiently/14727153#14727153
 set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
 map <F3> :cprevious<Return>
 map <F4> :cnext<Return>
 " compile
-map <F5> :wa<CR>:compiler gradle<CR>:make compileScala compileJava<CR>:cw 4<CR>
+map <F5> :wa<CR>:compiler gradle<CR>:make assemble<CR>:cw 4<CR>
 " }
