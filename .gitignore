@@ -1,5 +1,5 @@
 .DS_STORE
 *.swp
 vi/vim/bundle/*
-!vi/vim/bundle/vundle
+!vi/vim/bundle/Vundle.vim
 .netrwhist
