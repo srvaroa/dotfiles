@@ -5,8 +5,8 @@
 [profiles]
   [[default]]
     use_system_font = False
-    background_darkness = 0.12
-    background_type = transparent
+    background_darkness = 1
+    background_type = solid
     scrollbar_position = hidden
     show_titlebar = False
     font = Terminus 6

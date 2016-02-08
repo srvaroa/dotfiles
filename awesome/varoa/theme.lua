@@ -74,7 +74,7 @@ theme.titlebar_maximized_button_normal_active = "/home/galo/.config/awesome/varo
 theme.titlebar_maximized_button_focus_active  = "/home/galo/.config/awesome/varoa/titlebar/maximized_focus_active.png"
 
 -- You can use your own command to set your wallpaper
--- theme.wallpaper_cmd = { "awsetbg /home/galo/.config/awesome/varoa/background.png" }
+theme.wallpaper_cmd = { "awsetbg /home/galo/Dropbox/images/wallpapers/whaam.jpg" }
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = "/home/galo/.config/awesome/varoa/layouts/fairhw.png"
