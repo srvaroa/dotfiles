@@ -5,7 +5,6 @@
 theme = {}
 
 theme.font          = "Terminus 8"
-
 theme.bg_normal     = "#000000"
 theme.bg_focus      = "#222222"
 theme.bg_urgent     = "#ff0000"
