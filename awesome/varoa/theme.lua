@@ -4,7 +4,7 @@
 
 theme = {}
 
-theme.font          = "Terminus 6"
+theme.font          = "Terminus 8"
 
 theme.bg_normal     = "#000000"
 theme.bg_focus      = "#222222"
@@ -42,7 +42,7 @@ theme.tasklist_floating_icon = "/home/galo/.config/awesome/varoa/tasklist/floati
 -- menu_[border_color|border_width]
 theme.menu_submenu_icon = "/home/galo/.config/awesome/varoa/submenu.png"
 theme.menu_height = "15"
-theme.menu_width  = "100"
+theme.menu_width  = "200"
 
 -- You can add as many variables as
 -- you wish and access them by using
@@ -74,7 +74,7 @@ theme.titlebar_maximized_button_normal_active = "/home/galo/.config/awesome/varo
 theme.titlebar_maximized_button_focus_active  = "/home/galo/.config/awesome/varoa/titlebar/maximized_focus_active.png"
 
 -- You can use your own command to set your wallpaper
-theme.wallpaper_cmd = { "awsetbg /home/galo/Dropbox/images/wallpapers/whaam.jpg" }
+theme.wallpaper_cmd = { "awsetbg /home/galo/.config/awesome/varoa/whaam.jpg" }
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = "/home/galo/.config/awesome/varoa/layouts/fairhw.png"

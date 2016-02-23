@@ -9,7 +9,7 @@
     background_type = solid
     scrollbar_position = hidden
     show_titlebar = False
-    font = Terminus 6
+    font = Terminus 8
 [layouts]
   [[default]]
     [[[child1]]]
