@@ -23,7 +23,8 @@ set incsearch " find while searching
 set laststatus=2
 set linebreak
 set list
-set listchars=tab:»\ ,trail:⬞,precedes:«,extends:»,nbsp:⬞
+" set listchars=tab:»\ ,trail:⬞,precedes:«,extends:»,nbsp:⬞
+set listchars=tab:»\ ,precedes:«,extends:»
 set modeline
 set modelines=5
 set mouse=a
@@ -153,7 +154,7 @@ autocmd Filetype java set makeprg=javac\ %
 autocmd Filetype scala set makeprg=scalac\ %
 " some plugin insists on overriding this
 autocmd Filetype scala set softtabstop=4
-" Vundle needs filetype off 
+" Vundle needs filetype off
 filetype plugin indent on " filetype and php autocomplete. The indent is for vundle
 filetype off
 " }
@@ -165,8 +166,7 @@ call vundle#begin()
 " Plugin 'elzr/vim-json'
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 " detect project root, so make works with jvm langs
@@ -211,12 +211,13 @@ set lazyredraw " required by vim-airline, so far
 " { CTRL-P
 " https://github.com/kien/ctrlp.vim
 let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_max_files = 0
 " }
-"
+
 " { FUGITIVE
 " Ggrep -> quickfix window
 autocmd QuickFixCmdPost *grep* cwindow
-" }
+" }
 
 " For Java {
 " http://stackoverflow.com/questions/6411979/compiling-java-code-in-vim-more-efficiently/14727153#14727153
