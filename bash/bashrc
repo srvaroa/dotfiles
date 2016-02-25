@@ -143,16 +143,9 @@ alias ll='ls -alFh'
 alias la='ls -A'
 alias gradle='gradle --daemon'
 alias gw='./gradlew --daemon'
-alias gwb='./gradlew --daemon build -x integration -x test'
 alias mutt='cd && mutt'
 alias vi='vim'
 alias vi16='vim -u .vimrc_16'
 alias decr='gpg2 -d'
 alias encr='gpg2 -c'
 alias gitreb='git fetch origin && git pull --rebase origin master'
-
-# TODO move this to env. specific files (or make env agnostic)
-export MAVEN_OPTS='-XX:MaxPermSize=256m -Xms1024m -Xmx1024m'
-export GRADLE_OPTS='-XX:MaxPermSize=256m -Xms1024m -Xmx1024m'
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home
-export SCALA_HOME=/usr/local/opt/scala/idea
