@@ -4,10 +4,11 @@
 [keybindings]
 [profiles]
   [[default]]
-    use_system_font = False
-    background_darkness = 1
-    background_type = solid
     scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 1.0
+    scrollback_lines = 100000
+    background_image = None
     show_titlebar = False
     font = Terminus 8
 [layouts]

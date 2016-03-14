@@ -8,6 +8,10 @@ syntax on
 set backspace=start,indent,eol
 set colorcolumn=81
 set completeopt=menu,preview " show a menu, and tips if available
+" don't scan included files
+" could be more granular:
+" set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
+set complete-=i
 set confirm
 set cursorline " highlight cursor line
 set diffopt=vertical,filler,iwhite " options for diff mode
@@ -34,8 +38,8 @@ set number
 set path=** " ^wf finds the class file under cursor
 set ruler
 set scrolloff=3
-set shiftwidth=4
-set softtabstop=4 " how many cols when tabbing in insert mode
+set shiftwidth=2
+set softtabstop=2 " how many cols when tabbing in insert mode
 set showcmd
 set showmatch " show matching braces when indicator is over
 set showmode
@@ -44,8 +48,7 @@ set smartindent
 " in :find vim will try adding these suffixes
 set suffixesadd+=.scala
 set suffixesadd+=.java
-set sw=4
-set tabstop=4
+set tabstop=2
 set tags=$PWD/tags;/.  " set tags if generated
 set ttyfast " improve scrolling
 " set ttymouse=xterm2 " so that the mouse works inside tmux
@@ -149,11 +152,12 @@ au BufNewFile,BufRead *.phtml set filetype=php
 au BufRead,BufNewFile *.scala set filetype=scala
 au BufRead,BufNewFile *.java set filetype=java
 au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.cc set filetype=cpp
+au BufRead,BufNewFile *.hh set filetype=cpp
+au BufRead,BufNewFile *.c set filetype=c
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd Filetype java set makeprg=javac\ %
 autocmd Filetype scala set makeprg=scalac\ %
-" some plugin insists on overriding this
-autocmd Filetype scala set softtabstop=4
 " Vundle needs filetype off
 filetype plugin indent on " filetype and php autocomplete. The indent is for vundle
 filetype off
@@ -171,9 +175,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 " detect project root, so make works with jvm langs
 " see http://www.lucianofiandesio.com/vim-configuration-for-happy-java-coding
-Plugin 'airblade/vim-rooter'
+" Plugin 'airblade/vim-rooter'
 Plugin 'itchyny/lightline.vim'
-Plugin 'SirVer/ultisnips'
+Plugin 'bronson/vim-trailing-whitespace'
+" Plugin 'SirVer/ultisnips'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdtree'
 " Plugin 'derekwyatt/vim-scala'
@@ -227,3 +232,9 @@ map <F4> :cnext<Return>
 " compile
 map <F5> :wa<CR>:compiler gradle<CR>:make assemble<CR>:cw 4<CR>
 " }
+
+" some plugin insists on overriding this
+autocmd Filetype scala set softtabstop=2
+autocmd Filetype cpp set softtabstop=2
+autocmd Filetype cpp set shiftwidth=2
+autocmd Filetype cpp set tabstop=2
