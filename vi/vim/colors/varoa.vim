@@ -67,18 +67,18 @@ hi DiffText cterm=NONE ctermfg=NONE ctermbg=NONE
 
 " MARKDOWN
 " ========
-hi markdownHeadingRule cterm=NONE ctermbg=black ctermfg=28
-hi markdownBold cterm=bold ctermbg=black ctermfg=white
-hi markdownItalic cterm=bold ctermbg=black ctermfg=white
-hi markdownCodeBlock cterm=bold	ctermbg=black ctermfg=240
-hi markdownUrl cterm=NONE	ctermbg=black ctermfg=darkblue
-hi markdownUrlDelimiter cterm=NONE ctermbg=black ctermfg=white
-hi markdownUrlTitle cterm=NONE ctermbg=black ctermfg=NONE
-hi markdownUrlTitleDelimiter cterm=NONE ctermbg=black ctermfg=white
-hi markdownLinkText cterm=NONE ctermbg=black ctermfg=yellow
-hi markdownLinkDelimiter cterm=NONE ctermbg=black ctermfg=white
-" hi markdownListMarker cterm=bold	ctermbg=black ctermfg=yellow guibg=black guifg=yellow
-" hi markdownOrderedListMarker cterm=bold	ctermbg=black ctermfg=brown guibg=black guifg=brown
+hi markdownHeadingRule cterm=NONE ctermbg=none ctermfg=28
+hi markdownBold cterm=bold ctermbg=NONE ctermfg=white
+hi markdownItalic cterm=bold ctermbg=NONE ctermfg=white
+hi markdownCodeBlock cterm=bold	ctermbg=NONE ctermfg=240
+hi markdownUrl cterm=NONE	ctermbg=NONE ctermfg=darkblue
+hi markdownUrlDelimiter cterm=NONE ctermbg=NONE ctermfg=white
+hi markdownUrlTitle cterm=NONE ctermbg=NONE ctermfg=NONE
+hi markdownUrlTitleDelimiter cterm=NONE ctermbg=NONE ctermfg=white
+hi markdownLinkText cterm=NONE ctermbg=NONE ctermfg=yellow
+hi markdownLinkDelimiter cterm=NONE ctermbg=NONE ctermfg=white
+" hi markdownListMarker cterm=bold	ctermbg=NONE ctermfg=yellow guibg=black guifg=yellow
+" hi markdownOrderedListMarker cterm=bold	ctermbg=none ctermfg=brown guibg=black guifg=brown
 
 " GIT COMMIT
 " ==========
