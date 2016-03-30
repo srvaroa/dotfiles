@@ -1,6 +1,8 @@
-text/html; lynx -nonumbers -dump %s; copiousoutput; nametemplate=%s.html
-image/gif; open -a Preview %s
-image/jpg; open -a Preview %s; needsterminal; description=JPEG Image; nametemplate=%s.jpg
-image/jpeg; open -a Preview %s; needsterminal; description=JPEG Image; nametemplate=%s.jpg
-text/text; open -a vi '%s'; needsterminal; description=Text Text; nametemplate=%s.txt
-application/pdf; open -a Preview '%s' -; copiousoutput
+text/html; links -nonumbers -dump %s; copiousoutput; nametemplate=%s.html
+# image/*; ~/.mutt/muttimage.sh %s ; copiousoutput
+image/gif; display %s
+image/jpg; display %s; description=JPEG Image; nametemplate=%s.jpg
+image/jpeg; display %s; description=JPEG Image; nametemplate=%s.jpg
+text/text; vi '%s'; needsterminal; description=Text Text; nametemplate=%s.txt
+application/pdf; evince '%s' -
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; libreoffice '%s'
