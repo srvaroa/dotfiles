@@ -1,6 +1,6 @@
 [global_config]
   title_transmit_bg_color = "#1d1d1d"
-  handle_size = 0
+  handle_size = 1
 [keybindings]
 [profiles]
   [[default]]
@@ -11,13 +11,3 @@
     background_image = None
     show_titlebar = False
     font = Terminus 8
-[layouts]
-  [[default]]
-    [[[child1]]]
-      type = Terminal
-      parent = window0
-      profile = default
-    [[[window0]]]
-      type = Window
-      parent = ""
-[plugins]
