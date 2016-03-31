@@ -1,6 +1,7 @@
 text/html; links -nonumbers -dump %s; copiousoutput; nametemplate=%s.html
 # image/*; ~/.mutt/muttimage.sh %s ; copiousoutput
 image/gif; display %s
+image/png; display %s
 image/jpg; display %s; description=JPEG Image; nametemplate=%s.jpg
 image/jpeg; display %s; description=JPEG Image; nametemplate=%s.jpg
 text/text; vi '%s'; needsterminal; description=Text Text; nametemplate=%s.txt
