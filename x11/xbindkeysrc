@@ -90,5 +90,10 @@
     m:0x0 + c:121
     XF86AudioMute 
 
+#Remark
+"gnome-screenshot -a"
+    m:0x0 + c:152
+    XF86Explorer 
+
 #
 # End of xbindkeys configuration
