@@ -1,13 +1,26 @@
 [global_config]
+  enabled_plugins = APTURLHandler,
   title_transmit_bg_color = "#1d1d1d"
   handle_size = 1
+  focus = mouse
 [keybindings]
 [profiles]
   [[default]]
     scrollbar_position = hidden
     use_system_font = False
+    login_shell = True
     background_darkness = 1.0
     scrollback_lines = 100000
     background_image = None
+    scroll_on_output = False
     show_titlebar = False
     font = Terminus 8
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
