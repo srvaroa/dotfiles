@@ -137,6 +137,22 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 set -o vi
 export EDITOR=vi
 
+# ssh agent
+eval $(keychain --eval --quiet id_rsa)
+
+# Some utilities
+# --------------
+
+function gitreb() {
+  if [ "$#" == 1 ]
+  then
+    git fetch origin && git pull --rebase origin $1
+  else
+    echo "Usage: gitreb <branch>"
+    exit -1
+  fi
+}
+
 # some more ls aliases
 alias l='ls -alFh'
 alias ll='ls -alFh'
@@ -148,7 +164,6 @@ alias vi='vim'
 alias vi16='vim -u .vimrc_16'
 alias decr='gpg2 -d'
 alias encr='gpg2 -c'
-alias gitreb='git fetch origin && git pull --rebase origin master'
 alias suspend="echo -n mem > /sys/power/state"
 alias sshtun='ssh -f -n -N -L'
 
