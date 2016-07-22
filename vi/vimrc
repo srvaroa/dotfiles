@@ -142,7 +142,7 @@ nnoremap <leader>l :TlistToggle<CR>
 
 " REPLACEMENTS {
 iab <expr> tnow strftime("%Y%m%d %H:%M:%S")
-iab <expr> tdat strftime("%Y%m%d")
+iab <expr> tdat strftime("%Y-%m-%d")
 
 " }
 
@@ -170,6 +170,7 @@ call vundle#begin()
 " Plugin 'elzr/vim-json'
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'freitass/todo.txt-vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
