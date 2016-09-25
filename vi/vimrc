@@ -176,7 +176,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 " detect project root, so make works with jvm langs
 " see http://www.lucianofiandesio.com/vim-configuration-for-happy-java-coding
-" Plugin 'airblade/vim-rooter'
+Plugin 'airblade/vim-rooter'
 Plugin 'itchyny/lightline.vim'
 Plugin 'bronson/vim-trailing-whitespace'
 " Plugin 'SirVer/ultisnips'
@@ -191,6 +191,7 @@ Plugin 'altercation/vim-colors-solarized'
 " multiple cursors
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tfnico/vim-gradle'
+Plugin 'fatih/vim-go'
 
 " taglist
 " Bundle 'vim-scripts/taglist.vim.git'

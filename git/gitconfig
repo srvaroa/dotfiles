@@ -20,6 +20,7 @@
     cmd = vim -f -d \"$2\" \"$5\"
 [alias]
     lg = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lgg = log --date=local --pretty=format:'%h,%at,%ai,%s,%an' --abbrev-commit
     st = status
     ci = commit
     cis = commit -s
