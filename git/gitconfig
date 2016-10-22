@@ -3,6 +3,7 @@
     email = anglorvaroa@gmail.com
 [core]
     editor = vim
+    ignorecase = false
 [color]
     ui = true
     diff = auto
