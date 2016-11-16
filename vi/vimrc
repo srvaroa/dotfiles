@@ -38,8 +38,8 @@ set number
 set path=** " ^wf finds the class file under cursor
 set ruler
 set scrolloff=3
-set shiftwidth=2
-set softtabstop=2 " how many cols when tabbing in insert mode
+set shiftwidth=4
+set softtabstop=4 " how many cols when tabbing in insert mode
 set showcmd
 set showmatch " show matching braces when indicator is over
 set showmode
@@ -48,7 +48,7 @@ set smartindent
 " in :find vim will try adding these suffixes
 set suffixesadd+=.scala
 set suffixesadd+=.java
-set tabstop=2
+set tabstop=4
 set tags=$PWD/tags;/.  " set tags if generated
 set ttyfast " improve scrolling
 " set ttymouse=xterm2 " so that the mouse works inside tmux
