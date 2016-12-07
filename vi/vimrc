@@ -131,10 +131,14 @@ nnoremap <C-i> /=====<enter>
 " PLUGIN RELATED
 " ctrl-p find file
 nnoremap ,f :CtrlP<CR>
+
 " nerdtree toggle)
 nnoremap <leader>n :NERDTreeToggle<CR>
 " nerdtree find current file in tree
 nnoremap <leader>s :NERDTreeFind<CR>
+nnoremap nt :NERDTree<CR>
+let NERDTreeShowHidden=1
+
 " vim-taglist toggle
 nnoremap <leader>l :TlistToggle<CR>
 
