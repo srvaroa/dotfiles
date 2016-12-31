@@ -136,7 +136,6 @@ nnoremap ,f :CtrlP<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
 " nerdtree find current file in tree
 nnoremap <leader>s :NERDTreeFind<CR>
-nnoremap nt :NERDTree<CR>
 let NERDTreeShowHidden=1
 
 " vim-taglist toggle
@@ -196,6 +195,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tfnico/vim-gradle'
 Plugin 'fatih/vim-go'
+Plugin 'rust-lang/rust.vim'
 
 " taglist
 " Bundle 'vim-scripts/taglist.vim.git'
