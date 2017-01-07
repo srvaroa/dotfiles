@@ -149,7 +149,6 @@ function gitreb() {
     git fetch origin && git pull --rebase origin $1
   else
     echo "Usage: gitreb <branch>"
-    exit -1
   fi
 }
 
@@ -168,3 +167,5 @@ alias suspend="echo -n mem > /sys/power/state"
 alias sshtun='ssh -f -n -N -L'
 
 fortune
+
+# ssh-add ~/.ssh/*.pem
