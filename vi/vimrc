@@ -187,6 +187,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdtree'
 " Plugin 'derekwyatt/vim-scala'
 " Plugin 'rustushki/JavaImp.vim'
+Plugin 'wting/rust.vim'
 " syntastic
 " Bundle 'scrooloose/syntastic'
 " solarized
