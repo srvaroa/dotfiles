@@ -16,10 +16,10 @@ config resizePercentOf screenSize
 #bind down:ctrl;alt   resize +0   -10% bottom-right
 
 # Push Bindings
-bind right:alt;shift  push right bar-resize:screenSizeX/2
-bind left:alt;shift   push left  bar-resize:screenSizeX/2
-bind up:alt;shift     push up    bar-resize:screenSizeY/2
-bind down:alt;shift   push down  bar-resize:screenSizeY/2
+bind right:cmd,shift  push right bar-resize:screenSizeX/2
+bind left:cmd,shift   push left  bar-resize:screenSizeX/2
+bind up:cmd,shift     push up    bar-resize:screenSizeY/2
+bind down:cmd,shift   push down  bar-resize:screenSizeY/2
 #
 #bind right:shift;cmd  push right bar-resize:screenSizeX/3
 #bind left:shift;cmd   push left  bar-resize:screenSizeX/3
@@ -31,19 +31,19 @@ bind down:alt;shift   push down  bar-resize:screenSizeY/2
 #bind down:shift;alt  nudge +0   +10%
 #
 # Throw Bindings
-bind 1:ctrl;alt         throw 0 resize
-bind 2:ctrl;alt         throw 1 resize
-bind 3:ctrl;alt         throw 2 resize
+bind 1:ctrl,alt         throw 0 resize
+bind 2:ctrl,alt         throw 1 resize
+bind 3:ctrl,alt         throw 2 resize
 #bind right:ctrl;alt;cmd throw right resize
 #bind left:ctrl;alt;cmd  throw left  resize
 #bind up:ctrl;alt;cmd    throw up    resize
 #bind down:ctrl;alt;cmd  throw down  resize
 #
 # Focus Bindings
-bind right:ctrl;alt    focus right
-bind left:ctrl;alt     focus left
-bind up:ctrl;alt       focus up
-bind down:ctrl;alt     focus down
+bind right:ctrl,alt    focus right
+bind left:ctrl,alt     focus left
+bind up:ctrl,alt       focus up
+bind down:ctrl,alt     focus down
 #bind up:cmd;alt   focus behind
 #bind down:cmd;alt focus behind
 #
