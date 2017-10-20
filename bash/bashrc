@@ -165,6 +165,7 @@ alias decr='gpg2 -d'
 alias encr='gpg2 -c'
 alias suspend="echo -n mem > /sys/power/state"
 alias sshtun='ssh -f -n -N -L'
+alias note='cd ~/w/notebook && vim'
 
 fortune
 
