@@ -179,6 +179,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tfnico/vim-gradle'
 Plugin 'fatih/vim-go'
 Plugin 'rust-lang/rust.vim'
+Plugin 'tpope/vim-sleuth'
 
 " NOTE: comments after Bundle command are not allowed..
 call vundle#end()
@@ -222,9 +223,3 @@ map <F4> :cnext<Return>
 " compile
 map <F5> :wa<CR>:compiler gradle<CR>:make assemble<CR>:cw 4<CR>
 " }
-
-" some plugin insists on overriding this
-autocmd Filetype scala set softtabstop=4
-autocmd Filetype cpp set softtabstop=4
-autocmd Filetype cpp set shiftwidth=4
-autocmd Filetype cpp set tabstop=4
