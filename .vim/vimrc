@@ -128,19 +128,6 @@ inoremap <C-l> <c-R>=LogEntry()<cr><esc>kkyypVr-o
 " merge: find next conflict
 nnoremap <C-i> /=====<enter>
 
-" PLUGIN RELATED
-" ctrl-p find file
-nnoremap ,f :CtrlP<CR>
-
-" nerdtree toggle)
-nnoremap <leader>n :NERDTreeToggle<CR>
-" nerdtree find current file in tree
-nnoremap <leader>s :NERDTreeFind<CR>
-let NERDTreeShowHidden=1
-
-" vim-taglist toggle
-nnoremap <leader>l :TlistToggle<CR>
-
 " }
 
 " REPLACEMENTS {
@@ -174,7 +161,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'freitass/todo.txt-vim'
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 " detect project root, so make works with jvm langs
@@ -182,33 +170,16 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'airblade/vim-rooter'
 Plugin 'itchyny/lightline.vim'
 Plugin 'bronson/vim-trailing-whitespace'
-" Plugin 'SirVer/ultisnips'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdtree'
 " Plugin 'derekwyatt/vim-scala'
 " Plugin 'rustushki/JavaImp.vim'
 " syntastic
 " Bundle 'scrooloose/syntastic'
-" solarized
-Plugin 'altercation/vim-colors-solarized'
-" multiple cursors
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tfnico/vim-gradle'
 Plugin 'fatih/vim-go'
 Plugin 'rust-lang/rust.vim'
 
-" taglist
-" Bundle 'vim-scripts/taglist.vim.git'
-" non-github repos, e.g.:
-" Bundle 'git://git.wincent.com/command-t.git'
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of
-"     unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
 call vundle#end()
 filetype plugin indent on
@@ -219,15 +190,28 @@ filetype plugin indent on
 set lazyredraw " required by vim-airline, so far
 " }
 
-" { CTRL-P
-" https://github.com/kien/ctrlp.vim
-let g:ctrlp_working_path_mode = 'r'
-let g:ctrlp_max_files = 0
+" { NERDTREE
+" toggle)
+nnoremap <leader>n :NERDTreeToggle<CR>
+" find current file in tree
+nnoremap <leader>s :NERDTreeFind<CR>
+let NERDTreeShowHidden=1
+"}
+
+" { FZF.VIM
+nnoremap ,f :Files<CR>
+nnoremap ,t :Tags<CR>
+nnoremap ,b :Buffers<CR>
 " }
 
 " { FUGITIVE
 " Ggrep -> quickfix window
 autocmd QuickFixCmdPost *grep* cwindow
+" }
+
+" { VIM-TAGLIST
+" vim-taglist toggle
+nnoremap <leader>l :TlistToggle<CR>
 " }
 
 " For Java {
