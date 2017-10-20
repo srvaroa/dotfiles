@@ -101,6 +101,8 @@ onoremap in" :<c-u>normal! f"vi"<cr>
 " sane j, k movements for screen line, not file
 nnoremap j gj
 nnoremap k gk
+" cclose
+nnoremap <leader>x  :cclose
 " comment line
 nnoremap <leader>/ 0i//<esc>
 " comment visual area
@@ -160,14 +162,10 @@ call vundle#begin()
 " Plugin 'elzr/vim-json'
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'freitass/todo.txt-vim'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
-" detect project root, so make works with jvm langs
-" see http://www.lucianofiandesio.com/vim-configuration-for-happy-java-coding
-Plugin 'airblade/vim-rooter'
 Plugin 'itchyny/lightline.vim'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'Raimondi/delimitMate'
@@ -179,6 +177,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tfnico/vim-gradle'
 Plugin 'fatih/vim-go'
 Plugin 'rust-lang/rust.vim'
+" Infer buffer settings (e.g. tab/spaces scheme)
 Plugin 'tpope/vim-sleuth'
 
 " NOTE: comments after Bundle command are not allowed..
@@ -200,9 +199,9 @@ let NERDTreeShowHidden=1
 "}
 
 " { FZF.VIM
-nnoremap ,f :Files<CR>
-nnoremap ,t :Tags<CR>
-nnoremap ,b :Buffers<CR>
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>t :Tags<CR>
+nnoremap <leader>b :Buffers<CR>
 " }
 
 " { FUGITIVE
@@ -215,6 +214,10 @@ autocmd QuickFixCmdPost *grep* cwindow
 nnoremap <leader>l :TlistToggle<CR>
 " }
 
+" { ACK/AG
+nnoremap <leader>a :Ag<CR>
+" }
+"
 " For Java {
 " http://stackoverflow.com/questions/6411979/compiling-java-code-in-vim-more-efficiently/14727153#14727153
 set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
