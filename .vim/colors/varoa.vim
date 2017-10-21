@@ -71,7 +71,7 @@ hi markdownHeadingRule cterm=NONE ctermbg=none ctermfg=28
 hi markdownBold cterm=bold ctermbg=NONE ctermfg=white
 hi markdownItalic cterm=bold ctermbg=NONE ctermfg=white
 hi markdownCodeBlock cterm=bold	ctermbg=NONE ctermfg=240
-hi markdownUrl cterm=NONE	ctermbg=NONE ctermfg=darkblue
+hi markdownUrl cterm=NONE	ctermbg=NONE ctermfg=green
 hi markdownUrlDelimiter cterm=NONE ctermbg=NONE ctermfg=white
 hi markdownUrlTitle cterm=NONE ctermbg=NONE ctermfg=NONE
 hi markdownUrlTitleDelimiter cterm=NONE ctermbg=NONE ctermfg=white
