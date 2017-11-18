@@ -9,13 +9,13 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 7
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -38,6 +38,12 @@ bindsym $mod+d exec dmenu_run
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# Vim directions
+set $up k
+set $down j
+set $left h
+set $right l
 
 # change focus
 bindsym $mod+j focus left
@@ -101,6 +107,9 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
+# jump to previous workspace
+bindsym $mod+z workspace back_and_forth
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
@@ -117,6 +126,14 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+# lock computer
+bindsym --release $mod+Control+Shift+s exec i3lock && systemctl suspend
+
+# volume control
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2%-
+bindsym XF86AudioMute exec amixer -q set Master toggle
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -146,20 +163,20 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Brightness controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-
-# Brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
-
-exec --no-startup-id clipit
-
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         status_command i3status
 }
+
+# startup progras
+exec xscreensaver --no-splash
+exec clipit
+
+# Border tuning
+new_window pixel 1
+hide_edge_borders both
+
+# open certain windows in floating mode
+# for_window [class="(?i)pop-up"] floating enable
+
