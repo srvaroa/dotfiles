@@ -137,20 +137,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 set -o vi
 export EDITOR=vi
 
-# ssh agent
-eval $(keychain --eval --quiet id_rsa)
-
-# fzf + ag configuration
-if [ `which fzf` ] && [ `which ag` ]; then
-  export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
-  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-  export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
-  export FZF_DEFAULT_OPTS='
-  --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
-  --color info:108,prompt:109,spinner:108,pointer:168,marker:168
-  '
-fi
-
 # Some utilities
 # --------------
 
@@ -174,10 +160,27 @@ alias vi='vim'
 alias vi16='vim -u ~/.vimrc_16'
 alias decr='gpg2 -d'
 alias encr='gpg2 -c'
-alias suspend="echo -n mem > /sys/power/state"
+alias suspend="sudo systemctl suspend"
 alias sshtun='ssh -f -n -N -L'
 alias note='cd ~/w/notebook && vim'
 
 fortune
 
 # ssh-add ~/.ssh/*.pem
+
+# ssh agent
+# eval $(keychain --eval --quiet id_rsa)
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# fzf + ag configuration
+if [ `which fzf` ] && [ `which ag` ]; then
+  export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_DEFAULT_OPTS='
+  --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
+  --color info:108,prompt:109,spinner:108,pointer:168,marker:168
+  '
+fi
+
