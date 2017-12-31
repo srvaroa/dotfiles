@@ -1,5 +1,4 @@
 #!/bin/bash
 xmodmap ~/.Xmodmap &
-xscreensaver -no-splash &
+xscreensaver --no-splash &
 xbindkeys &
-nm-applet &
