@@ -49,7 +49,7 @@ set smartindent
 set suffixesadd+=.scala
 set suffixesadd+=.java
 set tabstop=4
-set tags=$PWD/tags;/.  " set tags if generated
+set tags=tags;
 set ttyfast " improve scrolling
 " set ttymouse=xterm2 " so that the mouse works inside tmux
 set tw=72
@@ -170,15 +170,12 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdtree'
-" Plugin 'derekwyatt/vim-scala'
-" Plugin 'rustushki/JavaImp.vim'
-" syntastic
-" Bundle 'scrooloose/syntastic'
 Plugin 'tfnico/vim-gradle'
 Plugin 'fatih/vim-go'
 Plugin 'rust-lang/rust.vim'
-" Infer buffer settings (e.g. tab/spaces scheme)
-Plugin 'tpope/vim-sleuth'
+Plugin 'tpope/vim-sleuth' " Infer buffer settings (e.g. tab/spaces scheme)
+" syntastic
+" Bundle 'scrooloose/syntastic'
 
 " NOTE: comments after Bundle command are not allowed..
 call vundle#end()
@@ -202,6 +199,8 @@ let NERDTreeShowHidden=1
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>t :Tags<CR>
 nnoremap <leader>b :Buffers<CR>
+
+nnoremap <leader>d :call fzf#vim#tags("'" . expand('<cword>'))<CR>"'")
 " }
 
 " { FUGITIVE
