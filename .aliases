@@ -1,0 +1,12 @@
+alias l='ls -alFh'
+alias ll='ls -alFh'
+alias la='ls -A'
+alias gradle='gradle --daemon'
+alias gw='./gradlew --daemon'
+alias vi='vim'
+alias vi16='vim -u ~/.vimrc_16'
+alias decr='gpg2 -d'
+alias encr='gpg2 -c'
+alias suspend="sudo systemctl suspend"
+alias sshtun='ssh -f -n -N -L'
+alias note='cd ~/w/notebook && vim'

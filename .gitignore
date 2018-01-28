@@ -5,6 +5,7 @@
 .netrwhist
 .gnupg
 gnupg
+.env
 
 .cmus/autosave
 .cmus/command-history

@@ -137,27 +137,21 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 set -o vi
 export EDITOR=vi
 
-# some more ls aliases
-alias l='ls -alFh'
-alias ll='ls -alFh'
-alias la='ls -A'
-alias gradle='gradle --daemon'
-alias gw='./gradlew --daemon'
-alias mutt='cd && mutt'
-alias vi='vim'
-alias vi16='vim -u ~/.vimrc_16'
-alias decr='gpg2 -d'
-alias encr='gpg2 -c'
-alias suspend="sudo systemctl suspend"
-alias sshtun='ssh -f -n -N -L'
-alias note='cd ~/w/notebook && vim'
+# append to history, not overwrite
+shopt -s histappend
+
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell
+
+# Add tab completion for SSH hostnames based on ~/.ssh/config
+# ignoring wildcards
+[[ -e "$HOME/.ssh/config" ]] && complete -o "default" \
+    -o "nospace" \
+    -W "$(grep "^Host" ~/.ssh/config | \
+    grep -v "[?*]" | cut -d " " -f2 | \
+    tr ' ' '\n')" scp sftp ssh
 
 fortune
-
-# ssh-add ~/.ssh/*.pem
-
-# ssh agent
-# eval $(keychain --eval --quiet id_rsa)
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
