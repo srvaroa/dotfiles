@@ -3,6 +3,7 @@
 .vim/bundle/*
 !.vim/bundle/Vundle.vim
 .netrwhist
+gnupg
 
 cmus/autosave
 cmus/command-history
