@@ -6,6 +6,7 @@
 .gnupg
 gnupg
 .env
+.bash_history
 
 .cmus/autosave
 .cmus/command-history
