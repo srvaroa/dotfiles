@@ -1,6 +1,6 @@
 #!/bin/bash
 git submodule update --init
-find . -name '.*' -d 1 | while read f
+find . -maxdepth 1 -name '.*' | while read f
 do
     f=$(basename $f)
     if [ "$f" != ".git" ]
