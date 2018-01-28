@@ -24,6 +24,7 @@
     lgg = log --date=local --pretty=format:'%h,%at,%ai,%s,%an' --abbrev-commit
     st = status
     ci = commit
+    cia = commit --amend
     cis = commit -s
     co = checkout
     sub = submodule update --init --recursive
