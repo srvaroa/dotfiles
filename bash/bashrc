@@ -137,18 +137,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 set -o vi
 export EDITOR=vi
 
-# Some utilities
-# --------------
-
-function gitreb() {
-  if [ "$#" == 1 ]
-  then
-    git fetch origin && git pull --rebase origin $1
-  else
-    echo "Usage: gitreb <branch>"
-  fi
-}
-
 # some more ls aliases
 alias l='ls -alFh'
 alias ll='ls -alFh'

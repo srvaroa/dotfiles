@@ -26,5 +26,9 @@
     ci = commit
     cia = commit --amend
     cis = commit -s
+    cism = commit -sm
     co = checkout
+    rb = pull --rebase origin
+    f = fetch
+    p = push
     sub = submodule update --init --recursive
