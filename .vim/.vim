@@ -1,0 +1,1 @@
+/Users/galo/w/rc/.vim

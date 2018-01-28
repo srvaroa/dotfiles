@@ -1,12 +1,27 @@
 .DS_STORE
+
 *.swp
+
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.viminfo
+*~
+
+.netrwhist
+.netrc
+
+.lesshst
+.*history
+
+.gnupg
+!.gnupg/gpg.conf
+
+.env
+
 .vim/bundle/*
 !.vim/bundle/Vundle.vim
-.netrwhist
-.gnupg
-gnupg
-.env
-.bash_history
 
 .cmus/autosave
 .cmus/command-history
@@ -18,3 +33,6 @@ gnupg
 
 .links/bookmarks.html
 .links/links.his
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*

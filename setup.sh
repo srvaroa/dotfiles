@@ -1,6 +1,10 @@
 #!/bin/bash
 git submodule update --init
-find . -name '.*' -type f -d 1 | while read f
+find . -name '.*' -d 1 | while read f
 do
-    ln -s $PWD/$(basename $f) $HOME/$(basename $f)
+    f=$(basename $f)
+    if [ "$f" != ".git" ]
+    then
+        ln -s $PWD/$f $HOME/$f
+    fi
 done
