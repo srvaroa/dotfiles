@@ -3,12 +3,16 @@
 .vim/bundle/*
 !.vim/bundle/Vundle.vim
 .netrwhist
+.gnupg
 gnupg
 
-cmus/autosave
-cmus/command-history
-cmus/lib.pl
-cmus/playlist.pl
-cmus/search-history
+.cmus/autosave
+.cmus/command-history
+.cmus/lib.pl
+.cmus/playlist.pl
+.cmus/search-history
 
-elinks/cookies
+.elinks/cookies
+
+.links/bookmarks.html
+.links/links.his
