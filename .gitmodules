@@ -1,7 +1,4 @@
 [submodule "vi/vim/bundle/Vundle.vim"]
-	path = .vim/bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim.git
+    path = .vim/bundle/Vundle.vim
+    url = https://github.com/VundleVim/Vundle.vim.git
     branch = master
-[submodule "luakit/luakit-plugins"]
-	path = luakit/plugins
-	url = https://github.com/mason-larobina/luakit-plugins
