@@ -9,6 +9,8 @@ Session.vim
 .viminfo
 *~
 
+.config/hub
+
 .netrwhist
 .netrc
 
