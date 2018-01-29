@@ -6,6 +6,6 @@ do
     dest=$HOME/$f
     if [ "$f" != ".git" ] && [ ! -f "$dest" ] && [ ! -d "$dest" ]
     then
-        ln -s $PWD/$f $desg
+        ln -s $PWD/$f $dest
     fi
 done
