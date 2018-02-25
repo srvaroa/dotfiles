@@ -166,3 +166,6 @@ if [ `which fzf` ] && [ `which ag` ]; then
   '
 fi
 
+if [ -f ~/.bash_profile ]; then
+    source ~/.bash_profile
+fi
