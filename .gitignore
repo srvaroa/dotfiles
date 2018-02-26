@@ -10,6 +10,8 @@ Session.vim
 *~
 
 .config/hub
+.config/chromium
+.config/user-dirs*
 
 .netrwhist
 .netrc
