@@ -9,5 +9,3 @@ do
         ln -s $PWD/$f $dest
     fi
 done
-
-ln -s $PWD/.bin ~ 
