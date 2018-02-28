@@ -174,7 +174,7 @@ bar {
 exec --no-startup-id xscreensaver --no-splash
 exec --no-startup-id clipit
 exec --no-startup-id xautolock -time 2 -locker i3lock
-exec --no-startup-id feh --bg-scale ~/Downloads/whaam.jpg
+exec --no-startup-id feh --bg-scale ~/w/rc/images/whaam.jpg
 
 # Border tuning
 new_window pixel 1
