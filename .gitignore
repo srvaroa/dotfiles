@@ -12,6 +12,10 @@ Session.vim
 .config/hub
 .config/chromium
 .config/user-dirs*
+.config/Slack
+.config/mimeapps.list
+.config/pulse
+.config/spotify
 
 .netrwhist
 .netrc
