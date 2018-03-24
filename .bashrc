@@ -167,3 +167,4 @@ if [ `which fzf` ] && [ `which ag` ]; then
 fi
 
 export PATH="$HOME/.bin:$PATH"
+export GOPATH="$HOME/w/go"
