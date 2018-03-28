@@ -16,6 +16,7 @@ Session.vim
 .config/mimeapps.list
 .config/pulse
 .config/spotify
+.config/gtk-2.0
 
 .netrwhist
 .netrc
