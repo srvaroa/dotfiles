@@ -18,6 +18,7 @@ Session.vim
 .config/spotify
 .config/gtk-2.0
 .config/dconf
+.config/menus
 
 .netrwhist
 .netrc
