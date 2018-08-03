@@ -168,3 +168,13 @@ fi
 
 export PATH="$HOME/.bin:$PATH"
 export GOPATH="$HOME/w/go"
+
+eval `ssh-agent -s`
+
+if [ -f ~/.aliases ]; then
+    source ~/.aliases
+fi
+
+if [ -f ~/.env ]; then
+    source ~/.env
+fi
