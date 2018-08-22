@@ -64,8 +64,9 @@ bind index G    last-entry
 bind index R  group-reply
 bind index <tab>    sync-mailbox
 bind index <space>  collapse-thread
-bind index C    copy-message
-bind index M    save-message
+# Saner copy/move dialogs
+macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 
 # Pager View Options ---------------------------------
 set pager_index_lines = 10 # number of index lines to show
@@ -83,8 +84,9 @@ bind pager k  previous-line
 bind pager j  next-line
 bind pager gg top
 bind pager G  bottom
-bind index C    copy-message
-bind index M    save-message
+# Saner copy/move dialogs
+macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 
 # Editor view options ------------------------
 bind editor <Tab> complete-query
