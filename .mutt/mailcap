@@ -1,9 +1,9 @@
 text/html; links -dump %s; copiousoutput; nametemplate=%s.html
 # image/*; ~/.mutt/muttimage.sh %s ; copiousoutput
-image/gif; display %s
-image/png; display %s
-image/jpg; display %s; description=JPEG Image; nametemplate=%s.jpg
-image/jpeg; display %s; description=JPEG Image; nametemplate=%s.jpg
+image/gif; open %s
+image/png; open %s
+image/jpg; open %s; description=JPEG Image; nametemplate=%s.jpg
+image/jpeg; open %s; description=JPEG Image; nametemplate=%s.jpg
 text/text; vi '%s'; needsterminal; description=Text Text; nametemplate=%s.txt
-application/pdf; evince '%s' -
+application/pdf; open '%s' -
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; libreoffice '%s'

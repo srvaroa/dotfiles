@@ -67,6 +67,7 @@ bind index G    last-entry
 bind index R  group-reply
 bind index <tab>    sync-mailbox
 bind index <space>  collapse-thread
+bind index - collapse-thread
 
 # Pager View Options ---------------------------------
 set pager_index_lines = 10 # number of index lines to show
@@ -99,11 +100,11 @@ macro index,pager \Cu "|urlview<enter>" "call urlview to open links"
 macro index,pager C "<tag-prefix><copy-message>?" "copy to a mailbox"
 macro index,pager M "<tag-prefix><save-message>?" "move to a mailbox"
 macro index,pager x "<tag-prefix><save-message>$trash<enter>" "move to the bin"
-macro index,pager y "<tag-prefix><delete-message>" "archive"
+macro index,pager y "<tag-prefix><save-message>$mbox<enter>" "archive"
 
 # Some gmail-like mappings
 macro index,pager gi "<change-folder>$spoolfile<Enter>" "go to Inbox"
-macro index,pager ga "<change-folder>$mbox<Enter>" "go to Inbox"
+macro index,pager ga "<change-folder>$mbox<Enter>" "go to Archive"
 macro index,pager gd "<change-folder>$postponed<Enter>" "go to Inbox"
 
 # collapse threads by default
