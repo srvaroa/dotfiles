@@ -18,9 +18,9 @@ color tilde	blue default
 color tree	red default
 
 color index	green default ~N	# new new messages
-color index	brightgreen default ~O	# old new messages
+color index	green default ~O	# old new messages
 color index	red default ~D	# deleted
-color index	yellow default ~T 	# to me	
+color index	yellow default ~T 	# to me
 
 color header	green default ^From:
 color header	cyan default ^To:
@@ -33,3 +33,7 @@ color body	green	default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
 
 color body	brightblue default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
 # identifies URLs
+
+color index brightblue  default "~v~(!~N)~(!~F)" # collapsed thread with no New or Flagged
+color index brightblue     default "~v~(~F)~(!~N)"  # collapsed thread with Flagged but no New
+color index brightgreen   default "~v~(~N)"        # collapsed thread with New
