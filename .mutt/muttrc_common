@@ -98,7 +98,7 @@ macro index,pager \Cu "|urlview<enter>" "call urlview to open links"
 # Saner copy/move dialogs
 macro index,pager C "<tag-prefix><copy-message>?" "copy to a mailbox"
 macro index,pager M "<tag-prefix><save-message>?" "move to a mailbox"
-macro index,pager X "<tag-prefix><save-message>$trash<enter>" "move to the bin"
+macro index,pager x "<tag-prefix><save-message>$trash<enter>" "move to the bin"
 macro index,pager y "<tag-prefix><delete-message>" "archive"
 
 # Some gmail-like mappings
