@@ -19,8 +19,9 @@ color tree	red default
 
 color index	green default ~N	# new new messages
 color index	green default ~O	# old new messages
-color index	red default ~D	# deleted
 color index	yellow default ~T 	# to me
+color index	brightwhite default ~F 	# flagged
+color index	red default ~D	# deleted
 
 color header	green default ^From:
 color header	cyan default ^To:
