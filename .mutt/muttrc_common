@@ -106,6 +106,7 @@ macro index,pager y "<tag-prefix><save-message>$mbox<enter>" "archive"
 macro index,pager gi "<change-folder>$spoolfile<Enter>" "go to Inbox"
 macro index,pager ga "<change-folder>$mbox<Enter>" "go to Archive"
 macro index,pager gd "<change-folder>$postponed<Enter>" "go to Inbox"
+macro index,pager gs "<change-folder>+sent<Enter>" "go to Sent"
 
 # collapse threads by default
 folder-hook . "exec collapse-all"
