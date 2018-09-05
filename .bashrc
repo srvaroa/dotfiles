@@ -178,3 +178,7 @@ fi
 if [ -f ~/.env ]; then
     source ~/.env
 fi
+
+# GPG signing has troubles in git when using pinentry
+# https://www.gnupg.org/(it)/documentation/manuals/gnupg/Common-Problems.html
+export GPG_TTY=$(tty)
