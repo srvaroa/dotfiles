@@ -6,6 +6,7 @@ do
     dest=$HOME/$f
     if [ "$f" != ".git" ] && \
        [ "$f" != ".gitignore" ] && \
+       [ "$f" != ".gitmodules" ] && \
        [ ! -f "$dest" ] &&   \
        [ ! -d "$dest" ]
     then
