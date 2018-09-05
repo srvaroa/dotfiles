@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ "$(xrandr | grep -w connected | wc -l)" -eq "2" ]; then
+    notify-send "Dual screen"
+    xrand-dual
+else
+    notify-send "Single screen"
+    xrand-single
+fi
+
