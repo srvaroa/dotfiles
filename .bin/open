@@ -1,0 +1,3 @@
+#!/bin/bash
+# This is meant to be a fallback for OSX's open.
+xdg-open $@ &> /dev/null &
