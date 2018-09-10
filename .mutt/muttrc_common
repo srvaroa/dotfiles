@@ -112,4 +112,4 @@ macro index,pager gs "<change-folder>+sent<Enter>" "go to Sent"
 folder-hook . "exec collapse-all"
 
 # colours
-source ~/.mutt/muttcolours
+source ~/.mutt/muttcolours.solarized.dark.256
