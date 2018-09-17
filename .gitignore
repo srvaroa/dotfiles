@@ -46,6 +46,7 @@ Session.vim
 .links/links.his
 
 .mutt/temp
+.mutt/cache
 
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
