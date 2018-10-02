@@ -39,7 +39,6 @@ unset confirmappend     # don't ask, just do!
 unset mark_old          # read/new is good enough for me
 unset move              # gmail does that
 
-
 # HEADER OPTIONS -----------------------------
 ignore *                # ignore all headers
 unignore from: to: cc: date: subject:	# show only these
@@ -97,10 +96,16 @@ bind attach <return> view-mailcap
 # Urls
 macro index,pager \Cu "|urlview<enter>" "call urlview to open links"
 # Saner copy/move dialogs
-macro index,pager C "<tag-prefix><copy-message>?" "copy to a mailbox"
-macro index,pager M "<tag-prefix><save-message>?" "move to a mailbox"
-macro index,pager x "<tag-prefix><save-message>$trash<enter>" "move to the bin"
-macro index,pager y "<tag-prefix><save-message>$mbox<enter>" "archive"
+macro index C "<tag-prefix><copy-message>?" "copy to a mailbox"
+macro index M "<tag-prefix><save-message>?" "move to a mailbox"
+macro index x "<tag-prefix><save-message>$trash<enter>" "move to the bin"
+macro index y "<tag-prefix><save-message>$mbox<enter>" "archive"
+
+# These can't be shared because <tag-prefix> is not available in the pager
+macro pager C "<copy-message>?" "copy to a mailbox"
+macro pager M "<save-message>?" "move to a mailbox"
+macro pager x "<save-message>$trash<enter>" "move to the bin"
+macro pager y "<save-message>$mbox<enter>" "archive"
 
 # Some gmail-like mappings
 macro index,pager gi "<change-folder>$spoolfile<Enter>" "go to Inbox"
