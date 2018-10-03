@@ -1,0 +1,16 @@
+# Much of this copied from http://stevelosh.com/blog/2012/10/the-homely-mutt/
+
+# account info -------------------------------
+set from        = "%EMAIL_FROM%"
+set realname    = "%EMAIL_NAME%"
+set imap_user   = "%EMAIL%"
+# set imap_pass = # empty, prompt for it
+set smtp_url    = "smtp://%EMAIL%@%SMTP_SERVER%:587/"
+# set smtp_pass = # ask
+set folder      = imaps://%IMAP_SERVER%/
+set spoolfile   = imaps://%IMAP_SERVER%/INBOX
+set mbox        = "=All Mail" # move here when removed from inbox
+set postponed   = "=Drafts"
+set record      = "=Sent"
+
+source ~/.mutt/muttrc_common
