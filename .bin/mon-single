@@ -1,0 +1,5 @@
+#!/bin/bash
+xrandr | grep "connected" | grep -v "eDP-1" | grep -v "LVDS-1" | cut -f1 -d ' ' | while read MON ; do
+    echo "Turn off $MON"
+    xrandr --output $MON --off
+done
