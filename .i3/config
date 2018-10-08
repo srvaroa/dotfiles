@@ -15,7 +15,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Terminus 18
+font pango:Terminus 20
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -171,6 +171,7 @@ exec --no-startup-id xscreensaver --no-splash
 exec --no-startup-id clipit
 exec --no-startup-id xautolock -time 2 -locker i3lock
 exec --no-startup-id feh --bg-scale ~/.i3/whaam.jpg
+exec --no-startup-id enabler redshift-gtk
 
 # Border tuning
 new_window pixel 1
