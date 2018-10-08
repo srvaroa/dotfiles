@@ -19,6 +19,7 @@ Session.vim
 .config/gtk-2.0
 .config/dconf
 .config/menus
+.config/ibus
 
 .netrwhist
 .netrc
