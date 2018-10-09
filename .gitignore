@@ -9,17 +9,18 @@ Session.vim
 .viminfo
 *~
 
-.config/hub
 .config/chromium
-.config/user-dirs*
-.config/Slack
+.config/dconf
+.config/gnome-initial-setup-done
+.config/gtk-2.0
+.config/hub
+.config/ibus
+.config/menus
 .config/mimeapps.list
 .config/pulse
+.config/Slack
 .config/spotify
-.config/gtk-2.0
-.config/dconf
-.config/menus
-.config/ibus
+.config/user-dirs*
 
 .netrwhist
 .netrc
