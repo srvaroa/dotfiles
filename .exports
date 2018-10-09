@@ -1,0 +1,33 @@
+# basics
+export PATH="$HOME/.bin:$PATH"
+export EDITOR=vi
+
+# languages
+export GOPATH="$HOME/w/go"
+
+# if it's an ssh session export GPG_TTY
+# https://www.gnupg.org/(it)/documentation/manuals/gnupg/Common-Problems.html
+if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
+	export GPG_TTY=$(tty)
+fi
+
+# don't put duplicate lines in the history. See bash(1) for more options
+# don't overwrite GNU Midnight Commander's setting of `ignorespace'.
+export HISTSIZE=10000000
+export HISTFILESIZE=$HISTSIZE
+export HISTCONTROL=ignoredups
+export HISTIGNORE=" *:ls:cd:date:* --help:* -h:"
+
+export LANG="en_GB.UTF-8"
+export LC_ALL="en_GB.UTF-8"
+
+# fzf + ag configuration
+if [ `which fzf` ] && [ `which ag` ]; then
+  export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_DEFAULT_OPTS='
+  --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
+  --color info:108,prompt:109,spinner:108,pointer:168,marker:168
+  '
+fi

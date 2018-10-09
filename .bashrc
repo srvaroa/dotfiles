@@ -5,16 +5,6 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# don't put duplicate lines in the history. See bash(1) for more options
-# don't overwrite GNU Midnight Commander's setting of `ignorespace'.
-HISTCONTROL=$HISTCONTROL${HISTCONTROL+:}ignoredups
-# ... or force ignoredups and ignorespace
-HISTCONTROL=ignoreboth
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
-
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -128,7 +118,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # vi mode
 set -o vi
-export EDITOR=vi
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -150,32 +139,9 @@ shopt -s cdspell
 
 fortune
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# fzf + ag configuration
-if [ `which fzf` ] && [ `which ag` ]; then
-  export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
-  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-  export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
-  export FZF_DEFAULT_OPTS='
-  --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
-  --color info:108,prompt:109,spinner:108,pointer:168,marker:168
-  '
-fi
-
-export PATH="$HOME/.bin:$PATH"
-export GOPATH="$HOME/w/go"
-
 eval `ssh-agent -s`
 
-if [ -f ~/.aliases ]; then
-    source ~/.aliases
-fi
-
-if [ -f ~/.env ]; then
-    source ~/.env
-fi
-
-# GPG signing has troubles in git when using pinentry
-# https://www.gnupg.org/(it)/documentation/manuals/gnupg/Common-Problems.html
-export GPG_TTY=$(tty)
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.aliases ] && source ~/.aliases
+[ -f ~/.exports ] && source ~/.exports
+[ -f ~/.env ] && source ~/.env
