@@ -17,6 +17,7 @@ Session.vim
 .config/ibus
 .config/menus
 .config/mimeapps.list
+.config/pavucontrol.ini
 .config/pulse
 .config/Slack
 .config/spotify
