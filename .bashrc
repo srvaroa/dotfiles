@@ -139,8 +139,6 @@ shopt -s cdspell
 
 fortune
 
-eval `ssh-agent -s`
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f ~/.aliases ] && source ~/.aliases
 [ -f ~/.exports ] && source ~/.exports
