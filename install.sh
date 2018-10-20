@@ -28,5 +28,6 @@ apt install --no-install-recommends -y \
     sudo \
     tree \
     tlp \
+    urlview \
     vim
 
