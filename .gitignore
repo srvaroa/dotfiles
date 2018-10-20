@@ -9,6 +9,7 @@ Session.vim
 .viminfo
 *~
 
+.config/autostart
 .config/chromium
 .config/dconf
 .config/gnome-initial-setup-done
