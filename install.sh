@@ -20,6 +20,7 @@ apt install --no-install-recommends -y \
     gnupg \
     htop \
     jq \
+    links2 \
     msmtp \
     mutt \
     pinentry-curses \
