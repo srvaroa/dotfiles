@@ -1,4 +1,4 @@
-text/html; links -dump %s; copiousoutput; nametemplate=%s.html
+text/html; links2 -dump %s; copiousoutput; nametemplate=%s.html
 # image/*; ~/.mutt/muttimage.sh %s ; copiousoutput
 image/gif; open %s
 image/png; open %s
