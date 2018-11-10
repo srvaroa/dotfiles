@@ -143,3 +143,4 @@ fortune
 [ -f ~/.aliases ] && source ~/.aliases
 [ -f ~/.exports ] && source ~/.exports
 [ -f ~/.env ] && source ~/.env
+[ -f ~/.func ] && source ~/.func
