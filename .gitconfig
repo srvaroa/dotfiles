@@ -20,6 +20,7 @@
 [merge]
     summary = true
     tool = vimdiff
+	conflictstyle = diff3
 [mergetool "vimdiff"]
     cmd = vim -f -d \"$2\" \"$5\"
 [alias]
@@ -31,6 +32,8 @@
     cis = commit -s
     cism = commit -sm
     co = checkout
+    ra = rebase --abort
+    rc = rebase --continue
     rb = pull --rebase origin
     f = fetch
     p = push
