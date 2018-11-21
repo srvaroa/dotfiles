@@ -24,6 +24,7 @@ Session.vim
 .config/Slack
 .config/spotify
 .config/user-dirs*
+.config/gcloud
 
 .netrwhist
 .netrc
