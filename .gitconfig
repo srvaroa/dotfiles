@@ -38,3 +38,5 @@
     f = fetch
     p = push
     sub = submodule update --init --recursive
+[include]
+    path = ~/.gitconfig.local
