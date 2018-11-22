@@ -18,6 +18,7 @@ apt install --no-install-recommends -y \
     fortune-mod \
     git \
     gnupg \
+    gpg-agent \
     htop \
     jq \
     links2 \
