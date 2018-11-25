@@ -120,7 +120,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # lock computer
-bindsym --release $mod+Ctrl+l exec i3lock
+bindsym --release $mod+Ctrl+l exec i3lock 141414
 
 # volume control
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
