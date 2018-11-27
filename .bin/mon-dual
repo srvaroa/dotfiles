@@ -6,3 +6,4 @@ if [ -e "$PRIMARY" ] ; then
 fi
 echo "Main monitor: $PRIMARY"
 xrandr --output DP-1 --auto --above $PRIMARY --mode 2560x1440 --noprimary
+xrandr --output $PRIMARY --primary
