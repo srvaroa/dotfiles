@@ -12,6 +12,8 @@ Session.vim
 .config/autostart
 .config/chromium
 .config/dconf
+.config/enchant
+.config/gedit
 .config/gnome-initial-setup-done
 .config/gtk-2.0
 .config/hub
