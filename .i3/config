@@ -181,3 +181,4 @@ hide_edge_borders both
 # open certain windows in floating mode
 # for_window [class="(?i)pop-up"] floating enable
 
+assign [class="Slack"] 10
