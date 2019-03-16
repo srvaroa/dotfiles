@@ -11,22 +11,28 @@ Session.vim
 
 .config/autostart
 .config/chromium
+.config/configstore
 .config/dconf
 .config/enchant
+.config/gcloud
 .config/gedit
 .config/gnome-initial-setup-done
 .config/gtk-2.0
-.config/hub
 .config/htop
+.config/hub
 .config/ibus
+.config/KeePass
 .config/menus
+.config/.mono
 .config/mimeapps.list
 .config/pavucontrol.ini
 .config/pulse
+.config/Qt*
 .config/Slack
 .config/spotify
 .config/user-dirs*
-.config/gcloud
+.config/VirtualBox
+.config/wireshark
 
 .netrwhist
 .netrc
