@@ -9,3 +9,4 @@ alias encr='gpg -c'
 alias suspend="sudo systemctl suspend"
 alias sshtun='ssh -f -n -N -L'
 alias note='cd ~/w/notebook && vim'
+alias k=kubectl
