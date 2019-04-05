@@ -1,9 +1,38 @@
-#!/bin/bash
-if [ "$(xrandr | grep -w connected | wc -l)" -eq "2" ]; then
-    notify-send "Dual screen"
-    mon-dual
-else
-    notify-send "Single screen"
-    mon-single
+#!/bin/bash -x
+
+function single {
+    xrandr --output $PRIMARY --primary --mode $PRIMARY_MODE --pos 0x0 --panning 0x0+0+0
+    # turn off all other monitors (even if plugged in)
+    xrandr | grep connected | grep -v "eDP-1" | grep -v "LVDS-1" | cut -f1 -d ' ' | while read MON ; do
+        xrandr --output $MON --off
+    done
+    notify-send "Single screen $PRIMARY"
+}
+
+function dual {
+    SCALE=1.7
+    SECONDARY=$(xrandr | grep " connected" | grep -v eDP-1 | cut -f1 -d' ')
+    SECONDARY_MODE=$(xrandr | grep "$SECONDARY" -A1 | tail -n1 | xargs | cut -f1 -d' ')
+    SEC_HEIGHT=$(echo $SECONDARY_MODE | cut -f2 -dx)
+    SEC_HEIGHT_SCALED=$(echo "scale=0;$SEC_HEIGHT*1.7" | bc)
+    xrandr --output $SECONDARY --noprimary --mode $SECONDARY_MODE --rotate normal --scale ${SCALE}x${SCALE}
+    xrandr --output $PRIMARY   --primary   --mode $PRIMARY_MODE --pos 0x$(echo $SEC_HEIGHT_SCALED | cut -f1 -d.)
+    notify-send "Dual screen, (1) $PRIMARY (2) $SECONDARY"
+}
+
+PRIMARY=$(xrandr | grep "eDP-1" | cut -f1 -d' ')
+if [ -e "$PRIMARY" ] ; then
+    PRIMARY=$(xrandr | grep "LVDS-1" | cut -f1 -d' ')
 fi
+PRIMARY_MODE=$(xrandr | grep "$PRIMARY" -A1 | tail -n1 | xargs | cut -f1 -d' ')
+
+if [ "$(xrandr | grep -w connected | wc -l)" -eq "2" ]; then
+    dual
+else
+    single
+fi
+
+
+# xrandr --output DP-1 --noprimary --mode 2560x1440 --rotate normal --scale 1.7x1.7
+# xrandr --output eDP-1 --primary --mode 3840x2160 --pos 0x2448
 
