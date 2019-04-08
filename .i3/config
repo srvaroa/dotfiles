@@ -161,7 +161,7 @@ bar {
 # startup progras
 
 exec --no-startup-id killall -q notify-osd
-exec --no-startup-id dunst -config ~/.i3/config_dunst
+exec --no-startup-id dunst
 exec --no-startup-id xscreensaver --no-splash
 exec --no-startup-id clipit
 exec --no-startup-id xautolock -time 2 -locker i3lock
