@@ -1,11 +1,13 @@
 #!/bin/bash
 
 function single {
-    xrandr --output $PRIMARY --primary --mode $PRIMARY_MODE --pos 0x0 --panning 0x0+0+0
+    xrandr --output $PRIMARY --primary --mode $PRIMARY_MODE --pos 0x0
     # turn off all other monitors (even if plugged in)
     xrandr | grep connected | grep -v "eDP-1" | grep -v "LVDS-1" | cut -f1 -d ' ' | while read MON ; do
         xrandr --output $MON --off
     done
+    # Dunst doesn't handle the screen switch well, force restart
+    killall dunst
     notify-send "Single screen $PRIMARY"
 }
 
