@@ -13,13 +13,11 @@ function clone_or_update() {
     REPO_DIR="$BACKUP_DIR/$REPO"
     if [ ! -d "$REPO_DIR" ]; then
         git clone -q https://$GH_TOKEN@github.com/$GH_USER/$REPO $REPO_DIR
-        pushd $REPO_DIR > /dev/null
-        git remote remove origin
-        popd > /dev/null
         echo "Cloned $REPO_DIR"
-    else 
+    else
         pushd $REPO_DIR > /dev/null
-        git pull -q --rebase https://$GH_TOKEN@github.com/$GH_USER/$REPO master
+        git fetch origin
+        git reset --hard origin/master
         echo "Updated $REPO_DIR"
         popd > /dev/null
     fi
