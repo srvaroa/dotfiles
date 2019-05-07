@@ -10,8 +10,9 @@ apt update
 apt -y upgrade
 apt install --no-install-recommends -y \
     automake \
+    autolock \
     ca-certificates \
-    clipit u
+    clipit \
     curl \
     feh \
     fortune \
