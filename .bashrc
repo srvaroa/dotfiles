@@ -159,8 +159,9 @@ alias ssh="gpg-connect-agent updatestartuptty /bye >/dev/null; ssh"
 
 fortune
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-[ -f ~/.aliases ] && source ~/.aliases
-[ -f ~/.exports ] && source ~/.exports
-[ -f ~/.env ] && source ~/.env
-[ -f ~/.func ] && source ~/.func
+[ -f /etc/bash_completion ] && . /etc/bash_completion
+[ -f ~/.fzf.bash ] && . ~/.fzf.bash
+[ -f ~/.aliases ] && . ~/.aliases
+[ -f ~/.exports ] && . ~/.exports
+[ -f ~/.env ] && . ~/.env
+[ -f ~/.func ] && . ~/.func
