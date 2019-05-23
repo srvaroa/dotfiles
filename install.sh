@@ -15,6 +15,7 @@ apt install --no-install-recommends -y \
     clipit \
     curl \
     feh \
+    fonts-inconsolata \
     fortune \
     fortune-mod \
     git \
@@ -32,5 +33,6 @@ apt install --no-install-recommends -y \
     tree \
     tlp \
     urlview \
-    vim
+    vim \
+    xbacklight
 
