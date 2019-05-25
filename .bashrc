@@ -160,6 +160,8 @@ alias ssh="gpg-connect-agent updatestartuptty /bye >/dev/null; ssh"
 fortune
 
 export CDPATH="$HOME/w:$HOME/w/go/src:$CDPATH"
+export PATH=/usr/local/go/bin:$HOME/w/go/bin/:$PATH
+export GOCACHE=$HOME/.go
 
 [ -f /etc/bash_completion ] && . /etc/bash_completion
 [ -f ~/.fzf.bash ] && . ~/.fzf.bash
