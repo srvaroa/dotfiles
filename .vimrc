@@ -84,11 +84,14 @@ nnoremap - /
 " edit and source .vimrc
 nnoremap <leader>ev :vs $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
+" auto format paragraph, return to initial point
+nnoremap <c-p> mxgqap<CR>`x
 " wrap words in things, there must be a more elegant way.
 nnoremap <leader>( viw<esc>a)<esc>hbi(<esc>lel
 nnoremap <leader>[ viw<esc>a]<esc>hbi[<esc>lel
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
+nnoremap <leader>` viw<esc>a`<esc>hbi`<esc>lel
 " operator pending, inner prev/next brackets
 onoremap ip( :<c-u>normal! F)vi(<cr>
 onoremap in( :<c-u>normal! f(vi(<cr>
