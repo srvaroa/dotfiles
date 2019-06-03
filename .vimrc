@@ -170,7 +170,6 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'itchyny/lightline.vim'
-Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tfnico/vim-gradle'
@@ -216,10 +215,6 @@ autocmd QuickFixCmdPost *grep* cwindow
 nnoremap <leader>l :TlistToggle<CR>
 " }
 
-" { ACK/AG
-nnoremap <leader>a :Ag<CR>
-" }
-"
 " For Java {
 " http://stackoverflow.com/questions/6411979/compiling-java-code-in-vim-more-efficiently/14727153#14727153
 set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
@@ -228,3 +223,7 @@ map <F4> :cnext<Return>
 " compile
 map <F5> :wa<CR>:compiler ./gradlew<CR>:make assemble<CR>:cw 4<CR>
 " }
+"
+" For Go
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
