@@ -3,7 +3,7 @@
 function single {
     xrandr --output $PRIMARY --primary --mode $PRIMARY_MODE --pos 0x0
     # turn off all other monitors (even if plugged in)
-    xrandr | grep connected | grep -v "eDP1" | grep -v "LVDS-1" | cut -f1 -d ' ' | while read MON ; do
+    xrandr | grep connected | grep -v "eDP" | grep -v "LVDS-1" | cut -f1 -d ' ' | while read MON ; do
         xrandr --output $MON --off
     done
     # Dunst doesn't handle the screen switch well, force restart
@@ -14,7 +14,7 @@ function single {
 
 function dual {
     SCALE=1.7
-    SECONDARY=$(xrandr | grep " connected" | grep -v eDP1 | cut -f1 -d' ')
+    SECONDARY=$(xrandr | grep " connected" | grep -v eDP | cut -f1 -d' ')
     SECONDARY_MODE=$(xrandr | grep "$SECONDARY" -A1 | tail -n1 | xargs | cut -f1 -d' ')
     SEC_HEIGHT=$(echo $SECONDARY_MODE | cut -f2 -dx)
     SEC_HEIGHT_SCALED=$(echo "scale=0;$SEC_HEIGHT*1.7" | bc)
@@ -27,7 +27,7 @@ function dual {
     notify-send "Dual screen, (1) $PRIMARY (2) $SECONDARY"
 }
 
-PRIMARY=$(xrandr | grep "eDP1" | cut -f1 -d' ')
+PRIMARY=$(xrandr | grep "eDP" | cut -f1 -d' ')
 if [ -e "$PRIMARY" ] ; then
     PRIMARY=$(xrandr | grep "LVDS-1" | cut -f1 -d' ')
 fi
