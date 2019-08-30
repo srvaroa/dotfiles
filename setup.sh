@@ -25,7 +25,11 @@ fi
 find $PWD/etc -type f | while read f
 do
     target=$(echo $f | sed -e "s|$PWD||")
-    sudo ln -s $f $target
+    sudo ln -s $f $target || true
+done
+find $PWD/.config/systemd/user -type f | while read f
+do
+    systemctl --user enable $f && systemctl --user start $f
 done
 systemctl --user daemon-reload || true
 sudo systemctl daemon-reload

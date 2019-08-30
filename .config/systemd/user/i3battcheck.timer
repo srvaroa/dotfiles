@@ -1,0 +1,8 @@
+[Unit]
+Description=Run i3battcheck every minute
+
+[Timer]
+OnUnitActiveSec=1m
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=Battery life check and notification
+
+[Service]
+Type=oneshot
+Environment=DISPLAY=:0
+ExecStart=/home/galo/.bin/i3batterycheck.sh
+
+[Install]
+WantedBy=default.target
