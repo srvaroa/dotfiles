@@ -2,7 +2,7 @@
 #
 # Rudimentary calculation of remaining battery life, and notification
 
-WARNING_THRESHOLD_MINS=3000
+WARNING_THRESHOLD_MINS=30
 CRITICAL_THRESHOLD_MINS=10
 
 WARNING_TOKEN_FILE=/tmp/i3battcheck_warned
