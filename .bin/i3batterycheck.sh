@@ -2,12 +2,12 @@
 #
 # Rudimentary calculation of remaining battery life, and notification
 
-WARNING_THRESHOLD_MINS=30
+WARNING_THRESHOLD_MINS=3000
 CRITICAL_THRESHOLD_MINS=10
 
 WARNING_TOKEN_FILE=/tmp/i3battcheck_warned
 
-if [ ! -z "$(cat /sys/class/power_supply/BAT0/uevent | grep -i discharging)" ]
+if [ ! -z "$(cat /sys/class/power_supply/BAT0/uevent | grep -i STATUS=discharging)" ]
 then
 	charge_now=$(cat /sys/class/power_supply/BAT0/uevent | grep POWER_SUPPLY_CHARGE_NOW= | cut -f2 -d=)
 	current_now=$(cat /sys/class/power_supply/BAT0/uevent | grep POWER_SUPPLY_CURRENT_NOW= | cut -f2 -d=)
@@ -22,4 +22,8 @@ then
 		notify-send -u critical -t 60000 \
 			"Battery level critical: ${remaining} mins remaining"
 	fi
+elif [ ! -z "$(cat /sys/class/power_supply/BAT0/uevent | grep -i STATUS=charging)" ]
+then
+	rm [ -f $WARNING_TOKEN_FILE ] || rm $WARNING_TOKEN_FILE
 fi
+
