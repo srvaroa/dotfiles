@@ -110,8 +110,12 @@ macro pager U "|urlview<enter>" "call urlview to open links"
 # Some gmail-like mappings
 macro index,pager gi "<change-folder>$spoolfile<Enter>" "go to Inbox"
 macro index,pager ga "<change-folder>$mbox<Enter>" "go to Archive"
-macro index,pager gd "<change-folder>$postponed<Enter>" "go to Inbox"
+macro index,pager gd "<change-folder>$postponed<Enter>" "go to Drafts"
 macro index,pager gs "<change-folder>+sent<Enter>" "go to Sent"
+
+# some other shortcuts
+macro index,pager gr "<change-folder>+prof/recruiting<enter>" "go to prof/Recruiting"
+macro index,pager ,r "<save-message>+prof/recruiting<enter>" "go to prof/Recruiting"
 
 # collapse threads by default
 folder-hook . "exec collapse-all"
