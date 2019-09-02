@@ -47,7 +47,7 @@ unignore from: to: cc: date: subject:	# show only these
 hdr_order Date From To Cc
 
 # DEAL with HTML emails ----------------------
-alternative_order text/html text/plain text/enriched *
+alternative_order text/plain text/enriched text/html *
 auto_view text/html     # Automatically parse html messages through w3m
 auto_view text/x-vcard  # vcard attachments viewed through mutt.vcard.filter
 set implicit_autoview=yes  # Load in pager if setting in .mailcap says 'copiousoutput'.
