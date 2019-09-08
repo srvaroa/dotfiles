@@ -114,7 +114,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # lock computer
-bindsym --release $mod+Ctrl+l exec i3lock 141414
+bindsym --release $mod+Ctrl+l exec i3lock -c 141414
 
 # volume control
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
@@ -171,10 +171,10 @@ bar {
 # startup progras
 
 exec --no-startup-id killall -q notify-osd
-exec --no-startup-id dunst
-exec --no-startup-id xscreensaver --no-splash
+exec --no-startup-id duns
+#exec --no-startup-id xscreensaver --no-splash
 exec --no-startup-id clipit
-exec --no-startup-id xautolock -time 2 -locker i3lock
+exec --no-startup-id xautolock -time 2 -locker "i3lock -c 141414"
 exec --no-startup-id feh --bg-scale ~/.i3/whaam.jpg
 exec --no-startup-id enabler redshift-gtk
 
