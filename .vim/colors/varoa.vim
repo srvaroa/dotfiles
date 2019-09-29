@@ -2,7 +2,7 @@
 " vim: tw=0 ts=2 sw=2
 " Vim color file
 " http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim?file=Xterm-color-table.png
-set background=dark
+" set background=dark
 if version > 580
   hi clear
   if exists("syntax_on")
@@ -71,11 +71,11 @@ hi markdownHeadingRule cterm=NONE ctermbg=none ctermfg=28
 hi markdownBold cterm=bold ctermbg=NONE ctermfg=white
 hi markdownItalic cterm=bold ctermbg=NONE ctermfg=white
 hi markdownCodeBlock cterm=bold	ctermbg=NONE ctermfg=240
-hi markdownUrl cterm=NONE	ctermbg=NONE ctermfg=green
+hi markdownUrl cterm=NONE	ctermbg=NONE ctermfg=22
 hi markdownUrlDelimiter cterm=NONE ctermbg=NONE ctermfg=white
 hi markdownUrlTitle cterm=NONE ctermbg=NONE ctermfg=NONE
 hi markdownUrlTitleDelimiter cterm=NONE ctermbg=NONE ctermfg=white
-hi markdownLinkText cterm=NONE ctermbg=NONE ctermfg=yellow
+hi markdownLinkText cterm=NONE ctermbg=NONE ctermfg=white
 hi markdownLinkDelimiter cterm=NONE ctermbg=NONE ctermfg=white
 " hi markdownListMarker cterm=bold	ctermbg=NONE ctermfg=yellow guibg=black guifg=yellow
 " hi markdownOrderedListMarker cterm=bold	ctermbg=none ctermfg=brown guibg=black guifg=brown

@@ -53,6 +53,7 @@ set tags=tags;
 set ttyfast " improve scrolling
 " set ttymouse=xterm2 " so that the mouse works inside tmux
 set tw=72
+set updatetime=800  " updates for signs etc. (e.g. vimgutter)
 set viminfo='20,<50,s10,h,% " remember some stuff after quiting vim:
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,idea,target,*.xml,*.html
 set wildmenu " file/command completion with results count, allow tabbing
@@ -138,7 +139,6 @@ nnoremap <C-i> /=====<enter>
 " REPLACEMENTS {
 iab <expr> tnow strftime("%Y%m%d %H:%M:%S")
 iab <expr> tdat strftime("%Y-%m-%d")
-
 " }
 
 " SYNTAX ENFORCEMENT {
@@ -159,7 +159,7 @@ filetype off
 " }
 
 " VIM-AIRLINE {
-" let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 set lazyredraw " required by vim-airline, so far
 " }
 
@@ -184,11 +184,10 @@ nnoremap <leader>d :call fzf#vim#tags("'" . expand('<cword>'))<CR>"'")
 autocmd QuickFixCmdPost *grep* cwindow
 " }
 
-" { VIM-TAGLIST
-" vim-taglist toggle
-nnoremap <leader>l :TlistToggle<CR>
-" }
-
 set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
 
 let g:deoplete#enable_at_startup = 1
+
+" On Goyo, toggle Limelight too
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
