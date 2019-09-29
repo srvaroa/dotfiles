@@ -2,6 +2,12 @@
 colorscheme varoa
 syntax on
 
+if has("gui_running") || &t_Co == 88 || &t_Co == 256
+    let s:low_color = 0
+else
+    let s:low_color = 1
+endif
+
 " ASSORTED CONFS {
 " let backspace past start of edit
 "     autoindenting and start of line
@@ -53,7 +59,6 @@ set tags=tags;
 set ttyfast " improve scrolling
 " set ttymouse=xterm2 " so that the mouse works inside tmux
 set tw=72
-set updatetime=800  " updates for signs etc. (e.g. vimgutter)
 set viminfo='20,<50,s10,h,% " remember some stuff after quiting vim:
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,idea,target,*.xml,*.html
 set wildmenu " file/command completion with results count, allow tabbing
@@ -141,25 +146,8 @@ iab <expr> tnow strftime("%Y%m%d %H:%M:%S")
 iab <expr> tdat strftime("%Y-%m-%d")
 " }
 
-" SYNTAX ENFORCEMENT {
-" are these really necessary? ftdetect/* files should do this
-au BufNewFile,BufRead *.phtml set filetype=php
-au BufRead,BufNewFile *.scala set filetype=scala
-au BufRead,BufNewFile *.java set filetype=java
-au BufRead,BufNewFile *.md set filetype=markdown
-au BufRead,BufNewFile *.cc set filetype=cpp
-au BufRead,BufNewFile *.hh set filetype=cpp
-au BufRead,BufNewFile *.c set filetype=c
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd Filetype java set makeprg=javac\ %
-autocmd Filetype scala set makeprg=scalac\ %
-" Vundle needs filetype off
-filetype plugin indent on " filetype and php autocomplete. The indent is for vundle
-filetype off
-" }
-
 " VIM-AIRLINE {
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 set lazyredraw " required by vim-airline, so far
 " }
 

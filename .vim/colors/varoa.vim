@@ -2,7 +2,7 @@
 " vim: tw=0 ts=2 sw=2
 " Vim color file
 " http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim?file=Xterm-color-table.png
-" set background=dark
+set background=dark
 if version > 580
   hi clear
   if exists("syntax_on")
@@ -10,7 +10,6 @@ if version > 580
   endif
 endif
 
-set t_Co=256
 let g:colors_name = "varoa"
 
 hi Normal cterm=NONE ctermfg=246 ctermbg=NONE
