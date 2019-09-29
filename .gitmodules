@@ -2,3 +2,30 @@
     path = .vim/bundle/Vundle.vim
     url = https://github.com/VundleVim/Vundle.vim.git
     branch = master
+[submodule ".vim/pack/srvaroa/start/vim-fugitive"]
+	path = .vim/pack/srvaroa/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule ".vim/pack/srvaroa/start/vim-gitgutter"]
+	path = .vim/pack/srvaroa/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
+[submodule ".vim/pack/srvaroa/start/lightline.vim"]
+	path = .vim/pack/srvaroa/start/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
+[submodule ".vim/pack/srvaroa/start/nerdtree"]
+	path = .vim/pack/srvaroa/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule ".vim/pack/srvaroa/start/vim-go"]
+	path = .vim/pack/srvaroa/start/vim-go
+	url = https://github.com/fatih/vim-go
+[submodule ".vim/pack/srvaroa/start/vim-sleuth"]
+	path = .vim/pack/srvaroa/start/vim-sleuth
+	url = https://github.com/tpope/vim-sleuth
+[submodule ".vim/pack/srvaroa/start/delimitMate"]
+	path = .vim/pack/srvaroa/start/delimitMate
+	url = https://github.com/Raimondi/delimitMate
+[submodule ".vim/pack/srvaroa/start/fzf"]
+	path = .vim/pack/srvaroa/start/fzf
+	url = https://github.com/junegunn/fzf
+[submodule ".vim/pack/srvaroa/start/fzf.vim"]
+	path = .vim/pack/srvaroa/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim

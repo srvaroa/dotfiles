@@ -158,32 +158,6 @@ filetype plugin indent on " filetype and php autocomplete. The indent is for vun
 filetype off
 " }
 
-" { VUNDLE SETUP (github.com/gmarik/vundle)
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" json support
-" Plugin 'elzr/vim-json'
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'itchyny/lightline.vim'
-Plugin 'Raimondi/delimitMate'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tfnico/vim-gradle'
-Plugin 'fatih/vim-go'
-Plugin 'rust-lang/rust.vim'
-Plugin 'tpope/vim-sleuth' " Infer buffer settings (e.g. tab/spaces scheme)
-" syntastic
-" Bundle 'scrooloose/syntastic'
-
-" NOTE: comments after Bundle command are not allowed..
-call vundle#end()
-filetype plugin indent on
-" }
-
 " VIM-AIRLINE {
 " let g:airline#extensions#tabline#enabled = 1
 set lazyredraw " required by vim-airline, so far
@@ -215,15 +189,6 @@ autocmd QuickFixCmdPost *grep* cwindow
 nnoremap <leader>l :TlistToggle<CR>
 " }
 
-" For Java {
-" http://stackoverflow.com/questions/6411979/compiling-java-code-in-vim-more-efficiently/14727153#14727153
 set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
-map <F3> :cprevious<Return>
-map <F4> :cnext<Return>
-" compile
-map <F5> :wa<CR>:compiler ./gradlew<CR>:make assemble<CR>:cw 4<CR>
-" }
-"
-" For Go
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
+
+let g:deoplete#enable_at_startup = 1
