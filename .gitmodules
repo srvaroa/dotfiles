@@ -31,3 +31,6 @@
 [submodule ".vim/pack/srvaroa/start/goyo.vim"]
 	path = .vim/pack/srvaroa/start/goyo.vim
 	url = https://github.com/junegunn/goyo.vim
+[submodule ".tmux/plugins/tpm"]
+	path = .tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
