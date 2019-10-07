@@ -67,8 +67,8 @@ hi DiffText cterm=NONE ctermfg=NONE ctermbg=NONE
 " MARKDOWN
 " ========
 hi markdownHeadingRule cterm=NONE ctermbg=none ctermfg=28
-hi markdownBold cterm=bold ctermbg=NONE ctermfg=white
-hi markdownItalic cterm=bold ctermbg=NONE ctermfg=white
+hi markdownBold cterm=none ctermbg=NONE ctermfg=249
+hi markdownItalic cterm=bold ctermbg=NONE ctermfg=249
 hi markdownCodeBlock cterm=bold	ctermbg=NONE ctermfg=240
 hi markdownUrl cterm=NONE	ctermbg=NONE ctermfg=22
 hi markdownUrlDelimiter cterm=NONE ctermbg=NONE ctermfg=white

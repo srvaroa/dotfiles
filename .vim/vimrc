@@ -179,3 +179,5 @@ let g:deoplete#enable_at_startup = 1
 " On Goyo, toggle Limelight too
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+
+filetype plugin indent on
