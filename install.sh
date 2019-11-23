@@ -2,15 +2,10 @@
 set -e
 set -o pipefail
 
-function enable_services() {
-    sudo systemctl enable tlp.service
-}
-
 apt update
 apt -y upgrade
 apt install --no-install-recommends -y \
     automake \
-    autolock \
     ca-certificates \
     clipit \
     curl \
@@ -30,9 +25,14 @@ apt install --no-install-recommends -y \
     powertop \
     redshift-gtk \
     sudo \
-    tree \
     tlp \
+    tree \
     urlview \
     vim \
-    xbacklight
+    w3m \
+    xautolock \
+    xbacklight \
+
+sudo systemctl enable tlp.service
+sudo systemctl start tlp.service
 
