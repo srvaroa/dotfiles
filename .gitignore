@@ -41,6 +41,7 @@ Session.vim
 .config/user-dirs*
 .config/VirtualBox
 .config/wireshark
+.config/systemd/user/*.target.wants
 
 .netrwhist
 .netrc
