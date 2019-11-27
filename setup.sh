@@ -29,7 +29,9 @@ do
 done
 find $PWD/.config/systemd/user -type f | while read f
 do
-    systemctl --user enable $f && systemctl --user start $f
+    echo "Enabling $f"
+    systemctl --user enable $f
+    systemctl --user start $f
 done
 systemctl --user daemon-reload || true
 sudo systemctl daemon-reload
