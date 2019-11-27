@@ -9,6 +9,7 @@ apt install --no-install-recommends -y \
     ca-certificates \
     clipit \
     curl \
+    dunst \
     feh \
     fonts-inconsolata \
     fortune \
@@ -19,11 +20,13 @@ apt install --no-install-recommends -y \
     htop \
     jq \
     links2 \
+    libnotify-bin \
     msmtp \
-    mutt \
+    notify-osd \
     pinentry-curses \
     powertop \
     redshift-gtk \
+    software-properties-common \
     sudo \
     tlp \
     tree \
@@ -32,6 +35,7 @@ apt install --no-install-recommends -y \
     w3m \
     xautolock \
     xbacklight \
+    xfonts-terminus \
 
 sudo systemctl enable tlp.service
 sudo systemctl start tlp.service
