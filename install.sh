@@ -12,6 +12,7 @@ apt install --no-install-recommends -y \
     dunst \
     feh \
     fonts-inconsolata \
+    fonts-noto \
     fortune \
     fortune-mod \
     git \
