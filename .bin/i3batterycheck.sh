@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/bash 
 #
 # Rudimentary calculation of remaining battery life, and notification
 
@@ -10,7 +10,15 @@ WARNING_TOKEN_FILE=/tmp/i3battcheck_warned
 if [ ! -z "$(cat /sys/class/power_supply/BAT0/uevent | grep -i STATUS=discharging)" ]
 then
 	charge_now=$(cat /sys/class/power_supply/BAT0/uevent | grep POWER_SUPPLY_CHARGE_NOW= | cut -f2 -d=)
+	if [ "" == "$charge_now" ]
+	then
+		charge_now=$(cat /sys/class/power_supply/BAT0/uevent | grep POWER_SUPPLY_ENERGY_NOW= | cut -f2 -d=)
+	fi
 	current_now=$(cat /sys/class/power_supply/BAT0/uevent | grep POWER_SUPPLY_CURRENT_NOW= | cut -f2 -d=)
+	if [ "" == "$current_now" ]
+	then
+		current_now=$(cat /sys/class/power_supply/BAT0/uevent | grep POWER_SUPPLY_POWER_NOW= | cut -f2 -d=)
+	fi
 	remaining=$(echo "$charge_now * 60 / $current_now" | bc)
 	if [ "$remaining" -lt "$WARNING_THRESHOLD_MINS" ] && [ ! -f "$WARNING_TOKEN_FILE" ]
 	then
