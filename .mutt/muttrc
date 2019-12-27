@@ -38,6 +38,7 @@ set ssl_starttls=yes
 set thorough_search     # strip headers and eval mimes before searching
 set timeout = 1         # idle time before scanning
 set wait_key = no       # shut up, mutt
+set wrap = 80
 unset confirmappend     # don't ask, just do!
 unset mark_old          # read/new is good enough for me
 
