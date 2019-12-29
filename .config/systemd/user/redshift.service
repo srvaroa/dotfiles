@@ -6,4 +6,4 @@ Type=simple
 ExecStart=/usr/bin/redshift-gtk -l geoclue2
 
 [Install]
-WantedBy=graphical.target
+WantedBy=default.target
