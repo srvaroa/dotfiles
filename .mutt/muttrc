@@ -26,6 +26,7 @@ set include=yes         # always include a copy when replying
 set mail_check=0        # min time between scans
 set mbox_type = Maildir # mailbox type
 set menu_scroll         # scroll line by line rather than pages
+set maildir_header_cache_verify=no # speeds up large mailbox reads
 set move=no
 set nobeep              # Shut up
 set nomark_old          # I don't care about whether a message is old
