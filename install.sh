@@ -22,6 +22,7 @@ apt install --no-install-recommends -y \
     jq \
     links2 \
     libnotify-bin \
+    linux-tools-common \
     msmtp \
     notify-osd \
     pinentry-curses \
@@ -29,6 +30,7 @@ apt install --no-install-recommends -y \
     redshift-gtk \
     software-properties-common \
     sudo \
+    sysstat \
     tlp \
     tree \
     urlview \
