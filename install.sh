@@ -23,6 +23,7 @@ apt install --no-install-recommends -y \
     links2 \
     libnotify-bin \
     linux-tools-common \
+    linux-tools-generic \
     msmtp \
     notify-osd \
     pinentry-curses \
