@@ -13,6 +13,7 @@ apt install --no-install-recommends -y \
     feh \
     fonts-inconsolata \
     fonts-noto \
+    fonts-noto-color-emoji \
     fortune \
     fortune-mod \
     git \
