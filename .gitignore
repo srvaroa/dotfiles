@@ -14,6 +14,7 @@ Session.vim
 
 .config/autostart
 .config/chromium
+.config/Code
 .config/configstore
 .config/dconf
 .config/enchant
@@ -27,7 +28,6 @@ Session.vim
 .config/hub
 .config/ibus
 .config/KeePass
-.config/mc
 .config/menus
 .config/mimeapps.list
 .config/.mono
