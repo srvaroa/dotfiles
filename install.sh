@@ -19,6 +19,10 @@ apt install --no-install-recommends -y \
     gnupg \
     gpg-agent \
     htop \
+    i3 \
+    i3-wm \
+    i3status \
+    i3lock \
     jq \
     links2 \
     libnotify-bin \
