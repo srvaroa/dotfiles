@@ -32,6 +32,7 @@ apt install --no-install-recommends -y \
     notify-osd \
     pinentry-curses \
     powertop \
+    psmisc \
     redshift-gtk \
     software-properties-common \
     sudo \
