@@ -43,6 +43,7 @@ Session.vim
 .config/user-dirs*
 .config/VirtualBox
 .config/wireshark
+.config/xfce4
 
 .netrwhist
 .netrc
