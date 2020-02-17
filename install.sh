@@ -36,6 +36,7 @@ apt install --no-install-recommends -y \
     sudo \
     sysstat \
     tlp \
+    tmux \
     tree \
     urlview \
     vim \
