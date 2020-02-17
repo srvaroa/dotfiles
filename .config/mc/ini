@@ -20,7 +20,7 @@ mouse_move_pages_viewer=true
 mouse_close_dialog=false
 fast_refresh=false
 drop_menus=false
-wrap_mode=false
+wrap_mode=true
 old_esc_mode=true
 cd_symlinks=true
 show_all_if_ambiguous=false
@@ -93,7 +93,7 @@ menubar_visible=1
 free_space=1
 horizontal_split=0
 vertical_equal=1
-left_panel_size=127
+left_panel_size=72
 horizontal_equal=1
 top_panel_size=1
 
@@ -131,7 +131,7 @@ quick_search_mode=2
 select_flags=6
 
 [FindFile]
-file_case_sens=true
+file_case_sens=false
 file_shell_pattern=true
 file_find_recurs=true
 file_skip_hidden=false
@@ -148,6 +148,8 @@ ignore_dirs=
 base_color=
 screen-256color=
 color_terminals=
+
+xterm-256color=
 
 [Panelize]
 Find *.orig after patching=find . -name \\*.orig -print
