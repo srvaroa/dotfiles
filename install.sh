@@ -28,6 +28,7 @@ apt install --no-install-recommends -y \
     links2 \
     libnotify-bin \
     msmtp \
+    mutt \
     notify-osd \
     pinentry-curses \
     powertop \
