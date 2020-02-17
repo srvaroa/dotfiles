@@ -27,6 +27,7 @@ Session.vim
 .config/hub
 .config/ibus
 .config/KeePass
+.config/mc
 .config/menus
 .config/mimeapps.list
 .config/.mono
@@ -35,13 +36,13 @@ Session.vim
 .config/pavucontrol.ini
 .config/pulse
 .config/Qt*
+.config/screengrab
 .config/Slack
 .config/spotify
 .config/systemd/user/*.target.wants
 .config/user-dirs*
 .config/VirtualBox
 .config/wireshark
-.config/systemd/user/*.target.wants
 
 .netrwhist
 .netrc
