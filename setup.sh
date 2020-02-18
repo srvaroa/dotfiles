@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 git submodule update --init
 find . -maxdepth 1 -name '.*' | while read f
 do
@@ -24,7 +23,7 @@ fi
 sudo mkdir -p /etc/X11/xorg.conf.d/
 
 # System services
-find $PWD/etc -type f | while read f
+find $PWD/etc -type f -name *.service | while read f
 do
     target=$(echo $f | sed -e "s|$PWD||")
     if [[ -f "$target" && ! -L "$target" ]]
@@ -48,8 +47,8 @@ done
 find $PWD/.config/systemd/user -type f | while read f
 do
     echo "Enabling $f"
-    systemctl --user enable $f
-    systemctl --user start $f
+    systemctl --user enable $(basename $f)
+    systemctl --user start $(basename $f)
 done
 systemctl --user daemon-reload || true
 sudo systemctl daemon-reload
