@@ -14,7 +14,7 @@ function single {
 
 function dual {
     SCALE=1.7
-    SECONDARY=$(xrandr | grep " connected" | grep -v eDP | cut -f1 -d' ')
+    SECONDARY=$(xrandr | grep " connected" | grep -v $PRIMARY | cut -f1 -d' ')
     SECONDARY_MODE=$(xrandr | grep "$SECONDARY" -A1 | tail -n1 | xargs | cut -f1 -d' ')
     SEC_HEIGHT=$(echo $SECONDARY_MODE | cut -f2 -dx)
     SEC_HEIGHT_SCALED=$(echo "scale=0;$SEC_HEIGHT*1.7" | bc)
@@ -27,9 +27,12 @@ function dual {
     notify-send "Dual screen, (1) $PRIMARY (2) $SECONDARY"
 }
 
-PRIMARY=$(xrandr | grep "eDP" | cut -f1 -d' ')
-if [ -e "$PRIMARY" ] ; then
-    PRIMARY=$(xrandr | grep "LVDS-1" | cut -f1 -d' ')
+PRIMARY=$(xrandr | grep " connected" | grep "eDP" | cut -f1 -d' ')
+if [ -z "$PRIMARY" ] ; then
+    PRIMARY=$(xrandr | grep " connected" | grep "LVDS-1" | cut -f1 -d' ')
+fi
+if [ -z "$PRIMARY" ] ; then
+    PRIMARY=$(xrandr | grep " connected" | grep "LVDS1" | cut -f1 -d' ')
 fi
 PRIMARY_MODE=$(xrandr | grep "$PRIMARY" -A1 | tail -n1 | xargs | cut -f1 -d' ')
 
