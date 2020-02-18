@@ -13,7 +13,7 @@ function single {
 }
 
 function dual {
-    SCALE=1.7
+    SCALE=1
     SECONDARY=$(xrandr | grep " connected" | grep -v $PRIMARY | cut -f1 -d' ')
     SECONDARY_MODE=$(xrandr | grep "$SECONDARY" -A1 | tail -n1 | xargs | cut -f1 -d' ')
     SEC_HEIGHT=$(echo $SECONDARY_MODE | cut -f2 -dx)
