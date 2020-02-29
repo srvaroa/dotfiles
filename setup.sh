@@ -20,11 +20,29 @@ then
     exit 1
 fi
 
+sudo mkdir -p /etc/X11/xorg.conf.d/
+
 # System services
 find $PWD/etc -type f -name *.service | while read f
 do
     target=$(echo $f | sed -e "s|$PWD||")
-    sudo ln -s $f $target || true
+    if [[ -f "$target" && ! -L "$target" ]]
+    then
+        target_bak="${target}_old"
+        read -p "$target exists, override with backup at ${target_bak}?  (y/n)" < /dev/tty
+        if [ $REPLY == "y" ]
+        then
+            sudo mv $target ${target_bak}
+            echo "$target backed up at ${target_bak}"
+        fi
+    fi
+
+    # If not symlink, create it, else assume we're there already
+    if [[ ! -L $target ]]
+    then
+        sudo ln -s $f $target || true
+    fi
+
 done
 find $PWD/.config/systemd/user -type f | while read f
 do
