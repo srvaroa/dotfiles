@@ -116,9 +116,12 @@ macro index,pager ga "<change-folder>$mbox<Enter>" "go to Archive"
 macro index,pager gd "<change-folder>$postponed<Enter>" "go to Drafts"
 macro index,pager gs "<change-folder>+sent<Enter>" "go to Sent"
 
-# some other shortcuts
+# quickly handle recruiter email
 macro index,pager gr "<change-folder>+prof/recruiting<enter>" "go to prof/Recruiting"
-macro index,pager ,r "<save-message>+prof/recruiting<enter>" "go to prof/Recruiting"
+macro index,pager ,r "<save-message>+prof/recruiting<enter>" "move to prof/Recruiting"
+
+# store email in file
+macro index,pager S "| cat > /tmp/email_dump"
 
 # collapse threads by default
 folder-hook . "exec collapse-all"
