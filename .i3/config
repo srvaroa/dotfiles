@@ -181,12 +181,10 @@ bar {
 exec --no-startup-id killall -q notify-osd
 exec --no-startup-id dunst
 exec --no-startup-id clipit
-# moved to systemd unit
-# exec --no-startup-id xautolock -time 2 -corners 0-00 -locker "i3lock -c 141414"
 exec --no-startup-id feh --bg-scale ~/.i3/whaam.jpg
-# moved to systemd unit
-#exec --no-startup-id enabler redshift-gtk
 exec --no-startup-id xmodmap ~/.Xmodmap
+exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal'
+exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/firefox'
 
 # Border tuning
 new_window pixel 1
