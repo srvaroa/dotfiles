@@ -1,7 +1,6 @@
 [user]
     name = Galo Navarro
     email = anglorvaroa@gmail.com
-    signingkey = 65A7B1CD4548E3CB
 [core]
     editor = vim
     ignorecase = false
