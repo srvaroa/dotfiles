@@ -2,7 +2,7 @@
 Description=Lock the screen automatically after a timeout
 
 [Service]
-Type=simple
+Type=forking
 Environment=DISPLAY=:0
 ExecStart=/usr/bin/xautolock -detectsleep -time 1 -corners "0-00" -locker "/usr/bin/i3lock -c 141414"
 

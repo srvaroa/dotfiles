@@ -1,9 +1,11 @@
 [Unit]
-Description=Redshift
+Description=Redshift display colour temperature adjustment (GUI)
+Documentation=http://jonls.dk/redshift/
+After=display-manager.service
 
 [Service]
-Type=simple
-ExecStart=/usr/bin/redshift-gtk -l geoclue2
+ExecStart=/usr/bin/redshift-gtk
+Restart=always
 
 [Install]
 WantedBy=default.target
