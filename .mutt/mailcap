@@ -1,5 +1,6 @@
 # HTML (when you press Enter in the attachment list)
 text/html; /usr/bin/links2 -html-assume-codepage %{charset} '%s'; needsterminal; description=HTML Text; nametemplate=%s.html
+>>>>>>> master
 # maybe also consider -html-hard-assume 1
 
 # HTML mail (rendered in Mutt's pager and also what you get when replying)
