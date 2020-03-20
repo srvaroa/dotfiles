@@ -27,6 +27,8 @@ Session.vim
 .config/htop
 .config/hub
 .config/ibus
+.config/karabiner/*
+!.config/karabiner/karabiner.json
 .config/KeePass
 .config/menus
 .config/mimeapps.list
