@@ -15,7 +15,7 @@ let g:colors_name = "varoa"
 hi Normal cterm=NONE ctermfg=246 ctermbg=NONE
 hi Boolean cterm=NONE ctermfg=fg ctermbg=NONE
 hi Character cterm=NONE ctermfg=fg ctermbg=NONE
-hi Comment cterm=NONE ctermfg=240 ctermbg=NONE
+hi Comment cterm=NONE ctermfg=243 ctermbg=NONE
 hi Constant cterm=NONE ctermfg=white ctermbg=NONE
 hi Conditional cterm=NONE ctermfg=fg ctermbg=NONE
 hi CursorLine cterm=NONE ctermbg=233
