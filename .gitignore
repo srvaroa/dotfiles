@@ -36,6 +36,7 @@ Session.vim
 .config/pavucontrol.ini
 .config/pulse
 .config/Qt*
+.config/repocket
 .config/screengrab
 .config/Slack
 .config/spotify
