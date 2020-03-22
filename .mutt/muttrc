@@ -98,13 +98,11 @@ bind editor <space> noop
 bind attach <return> view-mailcap
 
 # Saner copy/move dialogs
-macro index C "<tag-prefix><copy-message>?" "copy to a mailbox"
 macro index M "<tag-prefix><save-message>?" "move to a mailbox"
 macro index x "<tag-prefix><save-message>$trash<enter>" "move to the bin"
 macro index y "<tag-prefix><save-message>$mbox<enter>" "archive"
 
 # These can't be shared because <tag-prefix> is not available in the pager
-macro pager C "<copy-message>?" "copy to a mailbox"
 macro pager M "<save-message>?" "move to a mailbox"
 macro pager x "<save-message>$trash<enter>" "move to the bin"
 macro pager y "<save-message>$mbox<enter>" "archive"
@@ -120,8 +118,9 @@ macro index,pager gs "<change-folder>+sent<Enter>" "go to Sent"
 macro index,pager gr "<change-folder>+prof/recruiting<enter>" "go to prof/Recruiting"
 macro index,pager ,r "<save-message>+prof/recruiting<enter>" "move to prof/Recruiting"
 
-# store email in file
-macro index,pager S "| cat > /tmp/email_dump"
+# store email in files
+macro index,pager ,s "| cat > /tmp/email_dump"
+macro index,pager ,c "| cat > ~/w/notebook/cutouts/"
 
 # collapse threads by default
 folder-hook . "exec collapse-all"
