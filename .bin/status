@@ -1,0 +1,3 @@
+#!/bin/bash
+# Based on https://lorinstechblog.wordpress.com/2020/03/19/automating-slack-status-changes-on-macos/
+osascript ~/.bin/slack-automation/$1.scpt
