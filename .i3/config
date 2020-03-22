@@ -119,7 +119,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+s exec screengrab -r
 
 # lock computer
-bindsym --release $mod+Ctrl+l exec i3lock -c 141414
+bindsym --release $mod+Ctrl+l exec i3lock -f -c 141414
 
 # volume control
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
