@@ -32,7 +32,7 @@
     co = checkout
     ra = rebase --abort
     rc = rebase --continue
-    rb = pull --rebase origin
+    rb = pull --rebase origin master
     f = fetch
     p = push
     sub = submodule update --init --recursive
