@@ -30,6 +30,7 @@ Session.vim
 .config/karabiner/*
 !.config/karabiner/karabiner.json
 .config/KeePass
+.config/libreoffice
 .config/menus
 .config/mimeapps.list
 .config/.mono
