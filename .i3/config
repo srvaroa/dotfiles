@@ -181,7 +181,8 @@ bar {
 exec --no-startup-id killall -q notify-osd
 exec --no-startup-id dunst
 exec --no-startup-id clipit
-exec --no-startup-id feh --bg-scale ~/.i3/whaam.jpg
+# exec --no-startup-id feh --bg-scale ~/.i3/whaam.jpg
+exec --no-startup-id feh --bg-fill ~/.i3/whaam.jpg
 exec --no-startup-id xmodmap ~/.Xmodmap
 exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal'
 exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/firefox'
