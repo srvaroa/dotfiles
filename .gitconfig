@@ -13,7 +13,7 @@
 [diff]
     tool = vimdiff
 [gc]
-    auto = 1
+	auto = 256
 [fetch]
     prune = true
 [merge]
@@ -29,6 +29,7 @@
     cia = commit --amend
     cis = commit -s
     cism = commit -sm
+    cif = commit --fixup HEAD
     co = checkout
     ra = rebase --abort
     rc = rebase --continue

@@ -142,7 +142,7 @@ nnoremap <C-i> /=====<enter>
 " }
 
 " REPLACEMENTS {
-iab <expr> tnow strftime("%Y%m%d %H:%M:%S")
+iab <expr> tnow strftime("# %Y%m%d %H:%M:%S")
 iab <expr> tdat strftime("%Y-%m-%d")
 " }
 

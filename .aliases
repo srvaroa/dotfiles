@@ -13,3 +13,11 @@ alias k=kubectl
 
 alias j11='export JAVA_HOME=$(/usr/libexec/java_home -v 11.*); java -version'
 alias j8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.*); java -version'
+
+function fromb64() {
+    echo -n "$1" | base64 -di 2> /dev/null
+}
+
+function tob64() {
+    echo -n "$1" | base64 2> /dev/null
+}

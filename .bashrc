@@ -138,8 +138,12 @@ shopt -s cdspell
     tr ' ' '\n')" scp sftp ssh
 
 export CDPATH="$HOME/w:$HOME/w/go/src:$CDPATH"
-export PATH=/usr/local/go/bin:$HOME/w/go/bin:$HOME/.cargo/bin:$PATH
-export GOCACHE=$HOME/.go
+export PATH="/usr/local/go/bin:$HOME/w/go/bin:$HOME/.cargo/bin:$PATH"
+export GOCACHE="$HOME/.go"
+
+# export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+# export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+# export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
 [ -f /etc/bash_completion ] && . /etc/bash_completion
 [ -f ~/.fzf.bash ] && . ~/.fzf.bash
