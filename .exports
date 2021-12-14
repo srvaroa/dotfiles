@@ -4,7 +4,6 @@ export EDITOR=vi
 
 # languages
 export GOPATH="$HOME/w/go"
-export GOBIN="$GOPATH/bin" # unnecessary in newer Go versions
 
 # if it's an ssh session export GPG_TTY
 # https://www.gnupg.org/(it)/documentation/manuals/gnupg/Common-Problems.html
