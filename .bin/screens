@@ -18,8 +18,8 @@ function dual {
     SECONDARY_MODE=$(xrandr | grep "$SECONDARY" -A1 | tail -n1 | xargs | cut -f1 -d' ')
     SEC_HEIGHT=$(echo $SECONDARY_MODE | cut -f2 -dx)
     SEC_HEIGHT_SCALED=$(echo "scale=0;$SEC_HEIGHT*$SCALE" | bc)
-    xrandr --output $SECONDARY --noprimary --mode $SECONDARY_MODE --rotate normal --scale ${SCALE}x${SCALE}
-    xrandr --output $PRIMARY   --primary   --mode $PRIMARY_MODE --pos 0x$(echo $SEC_HEIGHT_SCALED | cut -f1 -d.)
+    xrandr --output $SECONDARY --noprimary --mode $SECONDARY_MODE --above $PRIMARY --scale ${SCALE}x${SCALE}
+    xrandr --output $PRIMARY   --primary   --mode $PRIMARY_MODE
 
     # The image will be wrongly scaled in the second monitor, fix that
     feh --bg-scale ~/.i3/whaam.jpg
