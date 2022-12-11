@@ -26,6 +26,7 @@
     lgg = log --date=local --pretty=format:'%h,%at,%ai,%s,%an' --abbrev-commit
     st = status
     ci = commit
+    cif = commit --fixup HEAD
     cia = commit --amend
     cis = commit -s
     cism = commit -sm
@@ -33,6 +34,7 @@
     ra = rebase --abort
     rc = rebase --continue
     rb = pull --rebase origin master
+    rbm = pull --rebase origin main
     f = fetch
     p = push
     sub = submodule update --init --recursive
