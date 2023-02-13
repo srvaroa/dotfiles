@@ -36,8 +36,7 @@ if [ -z "$PRIMARY" ] ; then
 fi
 PRIMARY_MODE=$(xrandr | grep "$PRIMARY" -A1 | tail -n1 | xargs | cut -f1 -d' ')
 
+single
 if [ "$(xrandr | grep -w connected | wc -l)" -eq "2" ]; then
     dual
-else
-    single
 fi
