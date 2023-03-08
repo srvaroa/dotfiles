@@ -31,6 +31,7 @@ apt install --no-install-recommends -y \
     mutt \
     notify-osd \
     pinentry-curses \
+    playerctl \
     powertop \
     psmisc \
     redshift-gtk \
