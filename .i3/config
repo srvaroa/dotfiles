@@ -141,7 +141,7 @@ bindsym XF86AudioStop exec playerctl previous
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Yes' 'i3-msg exit'"
 
-# Fire the script to reconcile monitor setup
+# Reconcile monitor setup
 bindsym $mod+Shift+m exec "/home/galo/.bin/screens"
 
 # resize window (you can also use the mouse for that)
