@@ -1,9 +1,0 @@
-#!/bin/bash
-# xrandr --output DP-1 --mode "1366x768"
-PRIMARY=$(xrandr | grep "eDP-1" | cut -f1 -d' ')
-if [ -e "$PRIMARY" ] ; then
-    PRIMARY=$(xrandr | grep "LVDS-1" | cut -f1 -d' ')
-fi
-echo "Main monitor: $PRIMARY"
-xrandr --output DP-1 --above $PRIMARY --mode 2560x1440 --noprimary
-xrandr --output $PRIMARY --primary
